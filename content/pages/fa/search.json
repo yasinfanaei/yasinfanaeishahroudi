@@ -1,0 +1,27 @@
+{
+  "id": "search",
+  "slug": "search",
+  "translation_key": "search",
+  "title": "جستجو",
+  "menu_label": "جستجو",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "search.html"
+  ],
+  "seo": {
+    "title": "جستجو | یاسین فنائی شاهرودی",
+    "description": "جستجو در وب‌سایت دانشگاهی یاسین فنائی شاهرودی.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "search",
+      "id": "search-search-1",
+      "enabled": true
+    }
+  ]
+}

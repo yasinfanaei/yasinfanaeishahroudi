@@ -1,0 +1,29 @@
+{
+  "id": "news",
+  "slug": "news",
+  "translation_key": "news",
+  "title": "تازه‌ها",
+  "menu_label": "تازه‌ها",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "news.html"
+  ],
+  "seo": {
+    "title": "اخبار و تازه‌ها | یاسین فنائی شاهرودی",
+    "description": "تازه‌های پژوهشی، مقالات، ارائه‌ها و رویدادهای دانشگاهی.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "news_list",
+      "id": "news-news_list-1",
+      "enabled": true,
+      "mode": "latest",
+      "limit": 5
+    }
+  ]
+}

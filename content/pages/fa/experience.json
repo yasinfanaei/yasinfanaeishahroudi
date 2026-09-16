@@ -1,0 +1,37 @@
+{
+  "id": "experience",
+  "slug": "experience",
+  "translation_key": "experience",
+  "title": "سوابق",
+  "menu_label": "سوابق",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "experience.html"
+  ],
+  "seo": {
+    "title": "سوابق | یاسین فنائی شاهرودی",
+    "description": "سوابق پژوهشی، حرفه‌ای، دانشگاهی، افتخارات و آموزش‌های فنی.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "experience_list",
+      "id": "experience-experience_list-1",
+      "enabled": true
+    },
+    {
+      "type": "awards_list",
+      "id": "experience-awards_list-2",
+      "enabled": true
+    },
+    {
+      "type": "skills_list",
+      "id": "experience-skills_list-3",
+      "enabled": true
+    }
+  ]
+}

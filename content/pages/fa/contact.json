@@ -1,0 +1,32 @@
+{
+  "id": "contact",
+  "slug": "contact",
+  "translation_key": "contact",
+  "title": "ارتباط",
+  "menu_label": "ارتباط",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "contact.html"
+  ],
+  "seo": {
+    "title": "ارتباط | یاسین فنائی شاهرودی",
+    "description": "اطلاعات تماس حرفه‌ای و پروفایل‌های علمی یاسین فنائی شاهرودی.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "contact_methods",
+      "id": "contact-contact_methods-1",
+      "enabled": true
+    },
+    {
+      "type": "academic_links",
+      "id": "contact-academic_links-2",
+      "enabled": true
+    }
+  ]
+}

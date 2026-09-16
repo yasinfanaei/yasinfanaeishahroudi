@@ -1,0 +1,32 @@
+{
+  "id": "research",
+  "slug": "research",
+  "translation_key": "research",
+  "title": "پژوهش",
+  "menu_label": "پژوهش",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "research.html"
+  ],
+  "seo": {
+    "title": "پژوهش | یاسین فنائی شاهرودی",
+    "description": "برنامه پژوهشی، علایق، پایان‌نامه و طرح‌های پژوهشی یاسین فنائی شاهرودی.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "research_themes",
+      "id": "research-research_themes-1",
+      "enabled": true
+    },
+    {
+      "type": "projects_list",
+      "id": "research-projects_list-2",
+      "enabled": true
+    }
+  ]
+}

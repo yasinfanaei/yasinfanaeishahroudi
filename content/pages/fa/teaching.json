@@ -1,0 +1,28 @@
+{
+  "id": "teaching",
+  "slug": "teaching",
+  "translation_key": "teaching",
+  "title": "تدریس",
+  "menu_label": "تدریس",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "teaching.html"
+  ],
+  "seo": {
+    "title": "آموزش | یاسین فنائی شاهرودی",
+    "description": "فعالیت‌های آموزشی و تدریس یاسین فنائی شاهرودی.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "rich_text",
+      "id": "teaching-rich_text-1",
+      "enabled": true,
+      "content": "فعالیت‌های آموزشی مستند در اطلاعات فعلی."
+    }
+  ]
+}

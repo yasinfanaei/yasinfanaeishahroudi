@@ -1,0 +1,28 @@
+{
+  "id": "publications",
+  "slug": "publications",
+  "translation_key": "publications",
+  "title": "انتشارات",
+  "menu_label": "انتشارات",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "publications.html"
+  ],
+  "seo": {
+    "title": "انتشارات | یاسین فنائی شاهرودی",
+    "description": "مقالات، ارائه‌های کنفرانسی و خروجی‌های پژوهشی یاسین فنائی شاهرودی.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "publication_index",
+      "id": "publications-publication_index-1",
+      "enabled": true,
+      "mode": "all"
+    }
+  ]
+}
