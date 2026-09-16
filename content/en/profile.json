@@ -1,0 +1,33 @@
+{
+  "name": "Yasin Fanaei Shahroudi",
+  "headline": "PhD Student in Public Economics",
+  "affiliation": "Semnan University",
+  "location": "Semnan, Iran",
+  "email": "Fanaeiyasin@gmail.com",
+  "eyebrow": "Public Economics · Applied Research",
+  "bio": "My academic work centers on public-economics questions at the intersection of illicit economic activity, institutions, governance, and development. My master's thesis examined the effect of money laundering on socioeconomic development, and subsequent work has addressed corruption, the informal economy, taxpayer satisfaction, tourism governance, and current-account outcomes in the MENA region.",
+  "short_bio": "PhD student in Public Economics at Semnan University, with research focused on corruption, money laundering and the informal economy, governance, economic development, fiscal policy, and applied econometrics.",
+  "profile_image": "assets/uploads/images/profile.jpeg",
+  "cv_pdf": "assets/uploads/documents/Yasin_Fanaei_Shahroudi_CV.pdf",
+  "cv_docx": "assets/uploads/documents/Yasin_Fanaei_Shahroudi_CV.docx",
+  "links": {
+    "orcid": "https://orcid.org/0009-0005-9508-604X",
+    "researchgate": "https://www.researchgate.net/profile/Yasin-Fanaei",
+    "google_scholar": "https://scholar.google.com/citations?user=6_vY6vkAAAAJ&hl=en",
+    "linkedin": "https://www.linkedin.com/in/yasin-fanaei-4b5959354",
+    "github": "https://github.com/yasinfanaei"
+  },
+  "contacts": [
+    {
+      "id": "academic-email",
+      "type": "email",
+      "label": "Email",
+      "value": "Fanaeiyasin@gmail.com",
+      "url": "",
+      "enabled": true,
+      "show_home": false,
+      "show_contact": true,
+      "show_footer": false
+    }
+  ]
+}

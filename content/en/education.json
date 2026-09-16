@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "id": "phd-public-economics-semnan",
+      "degree": "PhD in Public Economics",
+      "institution": "Semnan University",
+      "field": "Public Economics",
+      "period": "In progress",
+      "gpa": "",
+      "note": ""
+    },
+    {
+      "id": "ma-theoretical-economics-semnan",
+      "degree": "M.A. in Theoretical Economics",
+      "institution": "Semnan University",
+      "field": "Theoretical Economics",
+      "period": "",
+      "gpa": "18.89/20",
+      "note": "Completion date omitted because the date reported in the supplied Persian CV is chronologically inconsistent with other education information."
+    },
+    {
+      "id": "ba-economics-shahrood",
+      "degree": "B.A. in Economics",
+      "institution": "Shahrood University of Technology",
+      "field": "Economics",
+      "period": "",
+      "gpa": "17.83/20",
+      "note": ""
+    }
+  ]
+}

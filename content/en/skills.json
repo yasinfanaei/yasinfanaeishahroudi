@@ -1,0 +1,20 @@
+{
+  "groups": [
+    {
+      "id": "econometrics-statistics",
+      "title": "Econometrics & statistics",
+      "items": ["EViews", "Applied econometrics with EViews", "Statistical methods with SPSS", "Probability with R", "Nonparametric methods"]
+    },
+    {
+      "id": "programming-data",
+      "title": "Programming & data tools",
+      "items": ["R", "Regression with Python and R", "Sampling with Python and R", "Power BI", "Advanced Excel", "SmartPLS"]
+    },
+    {
+      "id": "economic-methods",
+      "title": "Economic methods & professional training",
+      "items": ["Social Accounting Matrix", "Economic diplomacy", "Research-paper writing workshops", "Professional Financial Economics"]
+    }
+  ],
+  "note": "These entries reflect documented courses and workshops; no proficiency level is inferred beyond what the supplied CV supports."
+}

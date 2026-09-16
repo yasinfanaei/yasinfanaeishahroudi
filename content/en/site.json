@@ -1,0 +1,206 @@
+{
+  "site_title": "Yasin Fanaei Shahroudi | Economics",
+  "default_description": "Academic website of Yasin Fanaei Shahroudi, PhD student in Public Economics at Semnan University.",
+  "footer_label": "Academic website",
+  "navigation": [
+    {
+      "id": "home",
+      "label": "Home",
+      "enabled": true,
+      "destination": "page",
+      "page": "home",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "research",
+      "label": "Research",
+      "enabled": true,
+      "destination": "page",
+      "page": "research",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "publications",
+      "label": "Publications",
+      "enabled": true,
+      "destination": "page",
+      "page": "publications",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "experience",
+      "label": "Experience",
+      "enabled": true,
+      "destination": "page",
+      "page": "experience",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "news",
+      "label": "News",
+      "enabled": true,
+      "destination": "page",
+      "page": "news",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "cv",
+      "label": "CV",
+      "enabled": true,
+      "destination": "page",
+      "page": "cv",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "enabled": true,
+      "destination": "page",
+      "page": "contact",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    }
+  ],
+  "announcement": "",
+  "keywords": [
+    "Public Economics",
+    "Economics",
+    "Research"
+  ],
+  "announcement_enabled": false,
+  "ui": {
+    "home_about_eyebrow": "About",
+    "home_about_title": "Research profile",
+    "home_research_eyebrow": "Selected research themes",
+    "home_research_title": "Current areas of work",
+    "home_education_eyebrow": "Education",
+    "home_education_title": "Academic background",
+    "research_eyebrow": "Research",
+    "research_title": "Research agenda",
+    "research_areas_label": "Research areas",
+    "research_thesis_label": "Thesis",
+    "research_projects_label": "Research project",
+    "publications_eyebrow": "Research output",
+    "publications_title": "Publications & conference papers",
+    "experience_eyebrow": "Experience",
+    "experience_title": "Experience & academic service",
+    "experience_lede": "Research, professional, academic-service, honors, and documented technical training.",
+    "experience_honors_label": "Honors",
+    "experience_training_label": "Selected technical training",
+    "contact_eyebrow": "Contact",
+    "contact_title": "Contact",
+    "contact_lede": "Professional contact information and academic profiles.",
+    "contact_profiles_label": "Academic profiles",
+    "teaching_eyebrow": "Teaching",
+    "teaching_title": "Teaching & instruction",
+    "teaching_lede": "Instruction activities currently documented in the supplied materials.",
+    "cv_education_label": "Education",
+    "cv_interests_label": "Research interests",
+    "cv_publications_label": "Selected publications",
+    "cv_projects_label": "Research projects",
+    "cv_service_label": "Academic service & honors",
+    "cv_note": "Public CV content intentionally excludes sensitive identity information. Bibliographic fields not supported by the supplied materials remain blank until verified.",
+    "view_research": "View research",
+    "download_cv": "Download CV",
+    "download_pdf": "Download PDF",
+    "download_docx": "Download DOCX",
+    "print": "Print this page",
+    "home_news_eyebrow": "Updates",
+    "home_news_title": "News & updates",
+    "home_news_link": "View all updates →",
+    "news_eyebrow": "Updates",
+    "news_title": "News & updates",
+    "news_empty": "No public updates have been added yet.",
+    "search_eyebrow": "Search",
+    "search_title": "Search the site",
+    "search_placeholder": "Search publications, research, projects, experience, and news…",
+    "search_no_results": "No matching results.",
+    "search_results_label": "Search results",
+    "publication_search_placeholder": "Search publications…",
+    "publication_all_types": "All types",
+    "publication_all_statuses": "All statuses",
+    "publication_all_years": "All years",
+    "publication_clear_filters": "Clear filters",
+    "citation_copy": "Copy citation",
+    "citation_bibtex": "BibTeX",
+    "citation_ris": "RIS",
+    "citation_copied": "Copied",
+    "abstract_label": "Abstract",
+    "keywords_label": "Keywords",
+    "pdf_label": "PDF",
+    "data_label": "Data",
+    "code_label": "Code",
+    "replication_label": "Replication",
+    "theme_light": "Light",
+    "theme_dark": "Dark",
+    "theme_system": "System",
+    "search_button": "Search"
+  },
+  "page_seo": [
+    {
+      "id": "home",
+      "title": "Yasin Fanaei Shahroudi | Economics",
+      "description": "Academic website of Yasin Fanaei Shahroudi, PhD student in Public Economics at Semnan University."
+    },
+    {
+      "id": "research",
+      "title": "Research | Yasin Fanaei Shahroudi",
+      "description": "Research agenda, interests, thesis, and research projects of Yasin Fanaei Shahroudi."
+    },
+    {
+      "id": "publications",
+      "title": "Publications | Yasin Fanaei Shahroudi",
+      "description": "Publications, conference papers, and research outputs of Yasin Fanaei Shahroudi."
+    },
+    {
+      "id": "experience",
+      "title": "Experience | Yasin Fanaei Shahroudi",
+      "description": "Research, professional experience, academic service, honors, and technical training."
+    },
+    {
+      "id": "cv",
+      "title": "CV | Yasin Fanaei Shahroudi",
+      "description": "Academic curriculum vitae of Yasin Fanaei Shahroudi."
+    },
+    {
+      "id": "contact",
+      "title": "Contact | Yasin Fanaei Shahroudi",
+      "description": "Professional contact information and academic profiles for Yasin Fanaei Shahroudi."
+    },
+    {
+      "id": "teaching",
+      "title": "Teaching | Yasin Fanaei Shahroudi",
+      "description": "Teaching and instruction activities of Yasin Fanaei Shahroudi."
+    },
+    {
+      "id": "news",
+      "title": "News & Updates | Yasin Fanaei Shahroudi",
+      "description": "Research news, publications, presentations, and academic updates."
+    },
+    {
+      "id": "search",
+      "title": "Search | Yasin Fanaei Shahroudi",
+      "description": "Search the academic website of Yasin Fanaei Shahroudi."
+    }
+  ]
+}

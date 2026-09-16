@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "id": "research-finance-semnan-1403",
+      "category": "research",
+      "title": "Research collaboration",
+      "organization": "General Department of Economic Affairs and Finance, Semnan",
+      "period": "1403 SH",
+      "description": "Research-related collaboration listed in the supplied CV."
+    },
+    {
+      "id": "tax-return-paya-1395-1400",
+      "category": "professional",
+      "title": "Tax return preparation",
+      "organization": "Paya Company",
+      "period": "1395–1400 SH",
+      "description": "Preparation and organization of tax declarations."
+    },
+    {
+      "id": "computer-support-1394-1397",
+      "category": "professional",
+      "title": "Computer hardware and software support",
+      "organization": "Dabbaghpour Passage",
+      "period": "1394–1397 SH",
+      "description": "Hardware/software repair and installation."
+    },
+    {
+      "id": "economics-association-shahrood-1400-1401",
+      "category": "service",
+      "title": "Economics Scientific Association — Central Council",
+      "organization": "Shahrood University",
+      "period": "1400–1401 SH",
+      "description": ""
+    },
+    {
+      "id": "economics-association-semnan-1402-1404",
+      "category": "service",
+      "title": "Economics Scientific Association — Central Council",
+      "organization": "Semnan University",
+      "period": "1402–1404 SH",
+      "description": ""
+    },
+    {
+      "id": "iranian-economists-association-1404",
+      "category": "service",
+      "title": "Association activity",
+      "organization": "Iranian Economists Association, Tehran",
+      "period": "1404 SH",
+      "description": "Listed under responsibilities in the supplied CV; the specific role title is not stated."
+    },
+    {
+      "id": "conference-executive-semnan-1404",
+      "category": "service",
+      "title": "Conference executive staff",
+      "organization": "Semnan University",
+      "period": "1404 SH",
+      "description": "National Conference on Infrastructure Reconstruction and Resolving Imbalances toward Investment for Production."
+    },
+    {
+      "id": "badminton-instruction-1400-1401",
+      "category": "other",
+      "title": "Badminton instruction",
+      "organization": "Shahrood Badminton Academy",
+      "period": "1400–1401 SH",
+      "description": ""
+    },
+    {
+      "id": "swimming-instruction-1398-1400",
+      "category": "other",
+      "title": "Swimming instruction",
+      "organization": "Fajr and Moj Pools, Shahrood",
+      "period": "1398–1400 SH",
+      "description": ""
+    }
+  ]
+}

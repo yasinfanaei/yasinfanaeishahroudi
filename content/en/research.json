@@ -1,0 +1,44 @@
+{
+  "intro": "My research examines how illicit economic activity, public institutions, governance, and fiscal choices relate to development and macroeconomic outcomes.",
+  "interests": [
+    "Public Economics",
+    "Corruption & Governance",
+    "Money Laundering",
+    "Informal Economy",
+    "Economic Development",
+    "Fiscal Policy & External Balances",
+    "Applied Econometrics"
+  ],
+  "themes": [
+    {
+      "id": "illicit-economy-institutions",
+      "title": "Money laundering, corruption, and the informal economy",
+      "description": "Several projects study the economic determinants and consequences of money laundering, with particular attention to corruption, informal economic activity, and socioeconomic development."
+    },
+    {
+      "id": "tax-administration",
+      "title": "Public economics and tax administration",
+      "description": "A research project develops a conceptual model for identifying factors associated with taxpayer satisfaction with tax administration, using business taxpayers in Semnan as the case context."
+    },
+    {
+      "id": "governance-development",
+      "title": "Governance and development",
+      "description": "Related work considers good governance and tourism development, including countries located along the Silk Road."
+    },
+    {
+      "id": "fiscal-external-balances",
+      "title": "Fiscal policy and external balances",
+      "description": "Another project examines corruption, government expenditure, and the current-account balance using evidence from the MENA region."
+    }
+  ],
+  "thesis": {
+    "id": "ma-thesis-money-laundering-development",
+    "title": "The Effect of Money Laundering on Socioeconomic Development",
+    "title_fa": "اثر پولشویی بر توسعه اقتصادی اجتماعی",
+    "degree": "M.A. in Theoretical Economics",
+    "institution": "Semnan University",
+    "supervisor": "Dr. Majid Maddah",
+    "grade": "19.40/20",
+    "note": "The thesis is the foundation for the subsequent publication stream on money laundering and development."
+  }
+}
