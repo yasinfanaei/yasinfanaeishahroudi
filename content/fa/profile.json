@@ -1,0 +1,33 @@
+{
+  "name": "یاسین فنائی شاهرودی",
+  "headline": "دانشجوی دکتری اقتصاد بخش عمومی",
+  "affiliation": "دانشگاه سمنان",
+  "location": "سمنان، ایران",
+  "email": "Fanaeiyasin@gmail.com",
+  "eyebrow": "اقتصاد بخش عمومی · پژوهش کاربردی",
+  "bio": "فعالیت پژوهشی من بر پرسش‌های اقتصاد بخش عمومی در پیوند با فعالیت‌های اقتصادی غیرقانونی، نهادها، حکمرانی و توسعه متمرکز است. پایان‌نامه کارشناسی ارشد من اثر پول‌شویی بر توسعه اقتصادی‌ـ‌اجتماعی را بررسی کرده و پژوهش‌های بعدی به فساد، اقتصاد غیررسمی، رضایتمندی مؤدیان مالیاتی، حکمرانی گردشگری و تراز حساب جاری در منطقه منا پرداخته‌اند.",
+  "short_bio": "دانشجوی دکتری اقتصاد بخش عمومی در دانشگاه سمنان، با تمرکز پژوهشی بر فساد، پول‌شویی و اقتصاد غیررسمی، حکمرانی، توسعه اقتصادی، سیاست مالی و اقتصادسنجی کاربردی.",
+  "profile_image": "assets/uploads/images/profile.jpeg",
+  "cv_pdf": "assets/uploads/documents/Yasin_Fanaei_Shahroudi_CV.pdf",
+  "cv_docx": "assets/uploads/documents/Yasin_Fanaei_Shahroudi_CV.docx",
+  "links": {
+    "orcid": "https://orcid.org/0009-0005-9508-604X",
+    "researchgate": "https://www.researchgate.net/profile/Yasin-Fanaei",
+    "google_scholar": "https://scholar.google.com/citations?user=6_vY6vkAAAAJ&hl=en",
+    "linkedin": "https://www.linkedin.com/in/yasin-fanaei-4b5959354",
+    "github": "https://github.com/yasinfanaei"
+  },
+  "contacts": [
+    {
+      "id": "academic-email",
+      "type": "email",
+      "label": "ایمیل",
+      "value": "Fanaeiyasin@gmail.com",
+      "url": "",
+      "enabled": true,
+      "show_home": false,
+      "show_contact": true,
+      "show_footer": false
+    }
+  ]
+}

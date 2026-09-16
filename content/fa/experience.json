@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "id": "research-finance-semnan-1403",
+      "category": "research",
+      "title": "همکاری پژوهشی",
+      "organization": "اداره کل امور اقتصادی و دارایی سمنان",
+      "period": "1403 SH",
+      "description": "همکاری پژوهشی درج‌شده در رزومه ارسالی."
+    },
+    {
+      "id": "tax-return-paya-1395-1400",
+      "category": "professional",
+      "title": "تهیه و تنظیم اظهارنامه مالیاتی",
+      "organization": "شرکت پایا",
+      "period": "1395–1400 SH",
+      "description": "تهیه و تنظیم اظهارنامه‌های مالیاتی."
+    },
+    {
+      "id": "computer-support-1394-1397",
+      "category": "professional",
+      "title": "تعمیرات و نصب سخت‌افزار و نرم‌افزار کامپیوتر",
+      "organization": "پاساژ دباغ‌پور",
+      "period": "1394–1397 SH",
+      "description": "تعمیر و نصب سخت‌افزار و نرم‌افزار."
+    },
+    {
+      "id": "economics-association-shahrood-1400-1401",
+      "category": "service",
+      "title": "عضو شورای حوزه مرکزی انجمن علمی اقتصاد",
+      "organization": "دانشگاه صنعتی شاهرود",
+      "period": "1400–1401 SH",
+      "description": ""
+    },
+    {
+      "id": "economics-association-semnan-1402-1404",
+      "category": "service",
+      "title": "عضو شورای حوزه مرکزی انجمن علمی اقتصاد",
+      "organization": "دانشگاه سمنان",
+      "period": "1402–1404 SH",
+      "description": ""
+    },
+    {
+      "id": "iranian-economists-association-1404",
+      "category": "service",
+      "title": "فعالیت در انجمن اقتصاددانان ایران",
+      "organization": "انجمن اقتصاددانان ایران، تهران",
+      "period": "1404 SH",
+      "description": "این مورد در بخش مسئولیت‌های رزومه درج شده و عنوان دقیق مسئولیت مشخص نشده است."
+    },
+    {
+      "id": "conference-executive-semnan-1404",
+      "category": "service",
+      "title": "کادر اجرایی همایش",
+      "organization": "دانشگاه سمنان",
+      "period": "1404 SH",
+      "description": "همایش ملی بازسازی زیرساخت‌ها و رفع ناترازی‌ها در راستای سرمایه‌گذاری برای تولید."
+    },
+    {
+      "id": "badminton-instruction-1400-1401",
+      "category": "other",
+      "title": "آموزش بدمینتون",
+      "organization": "آکادمی بدمینتون شاهرود",
+      "period": "1400–1401 SH",
+      "description": ""
+    },
+    {
+      "id": "swimming-instruction-1398-1400",
+      "category": "other",
+      "title": "آموزش شنا",
+      "organization": "استخر فجر و موج شاهرود",
+      "period": "1398–1400 SH",
+      "description": ""
+    }
+  ]
+}

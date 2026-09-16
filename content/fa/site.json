@@ -1,0 +1,206 @@
+{
+  "site_title": "یاسین فنائی شاهرودی | اقتصاد",
+  "default_description": "وب‌سایت دانشگاهی یاسین فنائی شاهرودی، دانشجوی دکتری اقتصاد بخش عمومی دانشگاه سمنان.",
+  "footer_label": "وب‌سایت دانشگاهی",
+  "navigation": [
+    {
+      "id": "home",
+      "label": "خانه",
+      "enabled": true,
+      "destination": "page",
+      "page": "home",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "research",
+      "label": "پژوهش",
+      "enabled": true,
+      "destination": "page",
+      "page": "research",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "publications",
+      "label": "انتشارات",
+      "enabled": true,
+      "destination": "page",
+      "page": "publications",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "experience",
+      "label": "سوابق",
+      "enabled": true,
+      "destination": "page",
+      "page": "experience",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "news",
+      "label": "تازه‌ها",
+      "enabled": true,
+      "destination": "page",
+      "page": "news",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "cv",
+      "label": "رزومه",
+      "enabled": true,
+      "destination": "page",
+      "page": "cv",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    },
+    {
+      "id": "contact",
+      "label": "ارتباط",
+      "enabled": true,
+      "destination": "page",
+      "page": "contact",
+      "url": "",
+      "section": "",
+      "new_tab": false,
+      "children": []
+    }
+  ],
+  "announcement": "",
+  "keywords": [
+    "اقتصاد بخش عمومی",
+    "اقتصاد",
+    "پژوهش"
+  ],
+  "announcement_enabled": false,
+  "ui": {
+    "home_about_eyebrow": "درباره من",
+    "home_about_title": "پروفایل پژوهشی",
+    "home_research_eyebrow": "محورهای منتخب پژوهش",
+    "home_research_title": "حوزه‌های فعلی فعالیت",
+    "home_education_eyebrow": "تحصیلات",
+    "home_education_title": "سوابق دانشگاهی",
+    "research_eyebrow": "پژوهش",
+    "research_title": "برنامه پژوهشی",
+    "research_areas_label": "حوزه‌های پژوهش",
+    "research_thesis_label": "پایان‌نامه",
+    "research_projects_label": "طرح پژوهشی",
+    "publications_eyebrow": "خروجی پژوهشی",
+    "publications_title": "مقالات و ارائه‌های کنفرانسی",
+    "experience_eyebrow": "سوابق",
+    "experience_title": "سوابق و فعالیت‌های دانشگاهی",
+    "experience_lede": "سوابق پژوهشی، حرفه‌ای، فعالیت‌های دانشگاهی، افتخارات و آموزش‌های فنی مستند.",
+    "experience_honors_label": "افتخارات",
+    "experience_training_label": "آموزش‌های فنی منتخب",
+    "contact_eyebrow": "ارتباط",
+    "contact_title": "ارتباط",
+    "contact_lede": "اطلاعات تماس حرفه‌ای و پروفایل‌های علمی.",
+    "contact_profiles_label": "پروفایل‌های علمی",
+    "teaching_eyebrow": "آموزش",
+    "teaching_title": "آموزش و تدریس",
+    "teaching_lede": "فعالیت‌های آموزشی مستند در اطلاعات فعلی.",
+    "cv_education_label": "تحصیلات",
+    "cv_interests_label": "علایق پژوهشی",
+    "cv_publications_label": "مقالات منتخب",
+    "cv_projects_label": "طرح‌های پژوهشی",
+    "cv_service_label": "فعالیت‌های دانشگاهی و افتخارات",
+    "cv_note": "محتوای رزومه عمومی عمداً اطلاعات هویتی حساس را شامل نمی‌شود. اطلاعات کتابشناختی تأییدنشده تا زمان راستی‌آزمایی خالی می‌ماند.",
+    "view_research": "مشاهده پژوهش‌ها",
+    "download_cv": "دانلود رزومه",
+    "download_pdf": "دانلود PDF",
+    "download_docx": "دانلود Word",
+    "print": "چاپ این صفحه",
+    "home_news_eyebrow": "تازه‌ها",
+    "home_news_title": "اخبار و به‌روزرسانی‌ها",
+    "home_news_link": "مشاهده همه تازه‌ها ←",
+    "news_eyebrow": "تازه‌ها",
+    "news_title": "اخبار و به‌روزرسانی‌ها",
+    "news_empty": "هنوز خبر عمومی ثبت نشده است.",
+    "search_eyebrow": "جستجو",
+    "search_title": "جستجو در سایت",
+    "search_placeholder": "جستجو در مقالات، پژوهش‌ها، طرح‌ها، سوابق و اخبار…",
+    "search_no_results": "نتیجه‌ای مطابق جستجو یافت نشد.",
+    "search_results_label": "نتایج جستجو",
+    "publication_search_placeholder": "جستجو در انتشارات…",
+    "publication_all_types": "همه انواع",
+    "publication_all_statuses": "همه وضعیت‌ها",
+    "publication_all_years": "همه سال‌ها",
+    "publication_clear_filters": "پاک‌کردن فیلترها",
+    "citation_copy": "کپی ارجاع",
+    "citation_bibtex": "BibTeX",
+    "citation_ris": "RIS",
+    "citation_copied": "کپی شد",
+    "abstract_label": "چکیده",
+    "keywords_label": "کلیدواژه‌ها",
+    "pdf_label": "PDF",
+    "data_label": "داده",
+    "code_label": "کد",
+    "replication_label": "بسته بازتولید",
+    "theme_light": "روشن",
+    "theme_dark": "تیره",
+    "theme_system": "سیستم",
+    "search_button": "جستجو"
+  },
+  "page_seo": [
+    {
+      "id": "home",
+      "title": "یاسین فنائی شاهرودی | اقتصاد",
+      "description": "وب‌سایت دانشگاهی یاسین فنائی شاهرودی، دانشجوی دکتری اقتصاد بخش عمومی دانشگاه سمنان."
+    },
+    {
+      "id": "research",
+      "title": "پژوهش | یاسین فنائی شاهرودی",
+      "description": "برنامه پژوهشی، علایق، پایان‌نامه و طرح‌های پژوهشی یاسین فنائی شاهرودی."
+    },
+    {
+      "id": "publications",
+      "title": "انتشارات | یاسین فنائی شاهرودی",
+      "description": "مقالات، ارائه‌های کنفرانسی و خروجی‌های پژوهشی یاسین فنائی شاهرودی."
+    },
+    {
+      "id": "experience",
+      "title": "سوابق | یاسین فنائی شاهرودی",
+      "description": "سوابق پژوهشی، حرفه‌ای، دانشگاهی، افتخارات و آموزش‌های فنی."
+    },
+    {
+      "id": "cv",
+      "title": "رزومه | یاسین فنائی شاهرودی",
+      "description": "رزومه علمی و دانشگاهی یاسین فنائی شاهرودی."
+    },
+    {
+      "id": "contact",
+      "title": "ارتباط | یاسین فنائی شاهرودی",
+      "description": "اطلاعات تماس حرفه‌ای و پروفایل‌های علمی یاسین فنائی شاهرودی."
+    },
+    {
+      "id": "teaching",
+      "title": "آموزش | یاسین فنائی شاهرودی",
+      "description": "فعالیت‌های آموزشی و تدریس یاسین فنائی شاهرودی."
+    },
+    {
+      "id": "news",
+      "title": "اخبار و تازه‌ها | یاسین فنائی شاهرودی",
+      "description": "تازه‌های پژوهشی، مقالات، ارائه‌ها و رویدادهای دانشگاهی."
+    },
+    {
+      "id": "search",
+      "title": "جستجو | یاسین فنائی شاهرودی",
+      "description": "جستجو در وب‌سایت دانشگاهی یاسین فنائی شاهرودی."
+    }
+  ]
+}
