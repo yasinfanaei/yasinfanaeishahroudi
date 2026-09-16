@@ -1,0 +1,153 @@
+{
+  "branding": {
+    "logo": "",
+    "favicon": "assets/favicon.svg",
+    "profile_image": "assets/uploads/images/profile.jpeg",
+    "cv_pdf": "assets/uploads/documents/Yasin_Fanaei_Shahroudi_CV.pdf",
+    "cv_docx": "assets/uploads/documents/Yasin_Fanaei_Shahroudi_CV.docx",
+    "open_graph_image": "assets/uploads/images/profile.jpeg"
+  },
+  "colors": {
+    "background": "#fbfbf8",
+    "surface": "#ffffff",
+    "text": "#171717",
+    "muted": "#666963",
+    "line": "#e4e5df",
+    "accent": "#164e63",
+    "accent_secondary": "#0f766e",
+    "soft": "#eef5f3"
+  },
+  "typography": {
+    "english_font": "Times New Roman",
+    "persian_font": "B Nazanin",
+    "base_font_size": 16,
+    "english_line_height": 1.68,
+    "persian_line_height": 1.9,
+    "hero_title_scale": 1.0
+  },
+  "layout": {
+    "max_width": 1100,
+    "section_spacing": 62,
+    "hero_space_top": 88,
+    "hero_space_bottom": 66,
+    "hero_gap": 64,
+    "portrait_size": 100,
+    "portrait_radius": 18,
+    "button_radius": 8,
+    "card_radius": 14,
+    "nav_gap": 20,
+    "portrait_side": "automatic"
+  },
+  "controls": {
+    "sticky_header": true,
+    "show_shadows": true,
+    "show_language_switch": true,
+    "show_footer": true,
+    "show_social_links_on_home": true,
+    "show_brand_name": true,
+    "show_theme_switch": true,
+    "show_search": true
+  },
+  "home_sections": [
+    {
+      "id": "hero",
+      "enabled": true
+    },
+    {
+      "id": "about",
+      "enabled": true
+    },
+    {
+      "id": "research",
+      "enabled": true
+    },
+    {
+      "id": "education",
+      "enabled": true
+    },
+    {
+      "id": "news",
+      "enabled": true
+    }
+  ],
+  "dark_colors": {
+    "background": "#121412",
+    "surface": "#191c19",
+    "text": "#f2f3ef",
+    "muted": "#b8bdb5",
+    "line": "#343934",
+    "accent": "#8fc7d8",
+    "accent_secondary": "#7dd3c7",
+    "soft": "#1f2a27"
+  },
+  "theme": {
+    "preset": "classic-academic",
+    "default_mode": "system"
+  },
+  "analytics": {
+    "enabled": false,
+    "provider": "google_analytics",
+    "measurement_id": ""
+  },
+  "seo": {
+    "site_url": "https://yasinfanaei.github.io/yasinfanaeishahroudi",
+    "structured_data_enabled": true,
+    "indexing_enabled": true
+  },
+  "custom_theme": {
+    "light": {
+      "background": "#fbfbf8",
+      "surface": "#ffffff",
+      "surface_alt": "#eef5f3",
+      "text": "#171717",
+      "text_muted": "#555b55",
+      "border": "#d7ddd8",
+      "accent": "#164e63",
+      "accent_hover": "#0e3c4d",
+      "accent_text": "#ffffff",
+      "link": "#164e63",
+      "link_hover": "#0e3c4d",
+      "button_primary_bg": "#164e63",
+      "button_primary_text": "#ffffff",
+      "button_secondary_bg": "#eef5f3",
+      "button_secondary_text": "#171717",
+      "tag_bg": "#e5f0ed",
+      "tag_text": "#173f3a",
+      "focus_ring": "#0f766e",
+      "success": "#176b3a",
+      "warning": "#7a4b00",
+      "danger": "#a12525"
+    },
+    "dark": {
+      "background": "#101311",
+      "surface": "#181c19",
+      "surface_alt": "#222a25",
+      "text": "#f4f5f2",
+      "text_muted": "#b7c0b8",
+      "border": "#3a453d",
+      "accent": "#8fc7d8",
+      "accent_hover": "#a8d7e4",
+      "accent_text": "#0b1112",
+      "link": "#9fd6e5",
+      "link_hover": "#b9e3ec",
+      "button_primary_bg": "#8fc7d8",
+      "button_primary_text": "#0b1112",
+      "button_secondary_bg": "#222a25",
+      "button_secondary_text": "#f4f5f2",
+      "tag_bg": "#26352f",
+      "tag_text": "#e7f4ef",
+      "focus_ring": "#7dd3c7",
+      "success": "#79d69c",
+      "warning": "#f2ca72",
+      "danger": "#ff9a9a"
+    }
+  },
+  "layout_presets": {
+    "content_width": "standard",
+    "hero_style": "split",
+    "section_density": "standard",
+    "card_style": "border",
+    "header_style": "standard",
+    "corner_style": "subtle"
+  }
+}
