@@ -1,0 +1,32 @@
+{
+  "id": "contact",
+  "slug": "contact",
+  "translation_key": "contact",
+  "title": "Contact",
+  "menu_label": "Contact",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "contact.html"
+  ],
+  "seo": {
+    "title": "Contact | Yasin Fanaei Shahroudi",
+    "description": "Professional contact information and academic profiles for Yasin Fanaei Shahroudi.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "contact_methods",
+      "id": "contact-contact_methods-1",
+      "enabled": true
+    },
+    {
+      "type": "academic_links",
+      "id": "contact-academic_links-2",
+      "enabled": true
+    }
+  ]
+}

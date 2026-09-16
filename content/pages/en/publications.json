@@ -1,0 +1,28 @@
+{
+  "id": "publications",
+  "slug": "publications",
+  "translation_key": "publications",
+  "title": "Publications",
+  "menu_label": "Publications",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "publications.html"
+  ],
+  "seo": {
+    "title": "Publications | Yasin Fanaei Shahroudi",
+    "description": "Publications, conference papers, and research outputs of Yasin Fanaei Shahroudi.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "publication_index",
+      "id": "publications-publication_index-1",
+      "enabled": true,
+      "mode": "all"
+    }
+  ]
+}

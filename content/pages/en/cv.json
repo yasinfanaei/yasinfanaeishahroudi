@@ -1,0 +1,43 @@
+{
+  "id": "cv",
+  "slug": "cv",
+  "translation_key": "cv",
+  "title": "CV",
+  "menu_label": "CV",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "cv.html"
+  ],
+  "seo": {
+    "title": "CV | Yasin Fanaei Shahroudi",
+    "description": "Academic curriculum vitae of Yasin Fanaei Shahroudi.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "downloads",
+      "id": "cv-downloads-1",
+      "enabled": true
+    },
+    {
+      "type": "education_timeline",
+      "id": "cv-education_timeline-2",
+      "enabled": true
+    },
+    {
+      "type": "research_themes",
+      "id": "cv-research_themes-3",
+      "enabled": true
+    },
+    {
+      "type": "publication_index",
+      "id": "cv-publication_index-4",
+      "enabled": true,
+      "mode": "featured"
+    }
+  ]
+}

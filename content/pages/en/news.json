@@ -1,0 +1,29 @@
+{
+  "id": "news",
+  "slug": "news",
+  "translation_key": "news",
+  "title": "News & Updates",
+  "menu_label": "News & Updates",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "news.html"
+  ],
+  "seo": {
+    "title": "News & Updates | Yasin Fanaei Shahroudi",
+    "description": "Research news, publications, presentations, and academic updates.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "news_list",
+      "id": "news-news_list-1",
+      "enabled": true,
+      "mode": "latest",
+      "limit": 5
+    }
+  ]
+}

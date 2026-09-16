@@ -1,0 +1,27 @@
+{
+  "id": "search",
+  "slug": "search",
+  "translation_key": "search",
+  "title": "Search",
+  "menu_label": "Search",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "search.html"
+  ],
+  "seo": {
+    "title": "Search | Yasin Fanaei Shahroudi",
+    "description": "Search the academic website of Yasin Fanaei Shahroudi.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "search",
+      "id": "search-search-1",
+      "enabled": true
+    }
+  ]
+}

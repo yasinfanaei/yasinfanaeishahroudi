@@ -1,0 +1,28 @@
+{
+  "id": "teaching",
+  "slug": "teaching",
+  "translation_key": "teaching",
+  "title": "Teaching",
+  "menu_label": "Teaching",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": true,
+  "show_in_sitemap": true,
+  "redirect_from": [
+    "teaching.html"
+  ],
+  "seo": {
+    "title": "Teaching | Yasin Fanaei Shahroudi",
+    "description": "Teaching and instruction activities of Yasin Fanaei Shahroudi.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "rich_text",
+      "id": "teaching-rich_text-1",
+      "enabled": true,
+      "content": "Instruction activities currently documented in the supplied materials."
+    }
+  ]
+}

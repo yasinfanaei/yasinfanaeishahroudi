@@ -1,0 +1,42 @@
+{
+  "id": "home",
+  "slug": "",
+  "translation_key": "home",
+  "title": "Yasin Fanaei Shahroudi",
+  "menu_label": "Yasin Fanaei Shahroudi",
+  "status": "published",
+  "layout": "standard",
+  "show_breadcrumbs": false,
+  "show_in_sitemap": true,
+  "redirect_from": [],
+  "seo": {
+    "title": "Yasin Fanaei Shahroudi | Economics",
+    "description": "Academic website of Yasin Fanaei Shahroudi, PhD student in Public Economics at Semnan University.",
+    "image": "",
+    "noindex": false
+  },
+  "blocks": [
+    {
+      "type": "profile_hero",
+      "id": "home-profile_hero-1",
+      "enabled": true
+    },
+    {
+      "type": "research_themes",
+      "id": "home-research_themes-2",
+      "enabled": true
+    },
+    {
+      "type": "education_timeline",
+      "id": "home-education_timeline-3",
+      "enabled": true
+    },
+    {
+      "type": "news_list",
+      "id": "home-news_list-4",
+      "enabled": true,
+      "mode": "latest",
+      "limit": 5
+    }
+  ]
+}
