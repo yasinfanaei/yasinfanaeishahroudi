@@ -1,0 +1,2983 @@
+media:
+- name: images
+  label: Images / تصاویر
+  input: assets/uploads/images
+  output: assets/uploads/images
+  rename: safe
+  categories:
+  - image
+- name: documents
+  label: CV & Documents / رزومه و اسناد
+  input: assets/uploads/documents
+  output: assets/uploads/documents
+  rename: safe
+  categories:
+  - document
+- name: publication_files
+  label: Publication files / فایل‌های پژوهشی
+  input: assets/uploads/publications
+  output: assets/uploads/publications
+  rename: safe
+  categories:
+  - document
+  - compressed
+  - spreadsheet
+components:
+  seo:
+    type: object
+    label: SEO
+    fields:
+    - name: title
+      label: SEO title
+      type: string
+    - name: description
+      label: Meta description
+      type: text
+    - name: image
+      label: Social preview image
+      type: image
+      options:
+        media: images
+        rename: safe
+    - name: canonical_override
+      label: Canonical URL override (advanced)
+      type: string
+      pattern: ^$|^https://.+
+      description: Usually leave blank. Use only when this page intentionally canonicalizes to another HTTPS URL.
+    - name: noindex
+      label: Noindex this page
+      type: boolean
+  profile_hero_block:
+    type: object
+    label: Profile Hero
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+  heading_block:
+    type: object
+    label: Heading
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+    - name: eyebrow
+      label: Eyebrow
+      type: string
+    - name: title
+      label: Heading
+      type: string
+      required: true
+    - name: level
+      label: Heading level
+      type: select
+      options:
+        values:
+        - name: h2
+          label: H2
+        - name: h3
+          label: H3
+    - name: lead
+      label: Lead text
+      type: text
+  rich_text_block:
+    type: object
+    label: Rich text
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+    - name: content
+      label: Content
+      type: rich-text
+      options:
+        format: html
+        switcher: false
+        media: false
+  image_block:
+    type: object
+    label: Image
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+    - name: image
+      label: Image
+      type: image
+      required: true
+      options:
+        media: images
+        rename: safe
+    - name: alt
+      label: Alt text
+      type: string
+      required: true
+      description: Describe the image for accessibility.
+    - name: caption
+      label: Caption
+      type: text
+    - name: width
+      label: Width
+      type: select
+      options:
+        values:
+        - 100%
+        - 75%
+        - 50%
+  callout_block:
+    type: object
+    label: Callout
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+    - name: title
+      label: Title
+      type: string
+    - name: body
+      label: Body
+      type: text
+      required: true
+    - name: tone
+      label: Tone
+      type: select
+      options:
+        values:
+        - default
+        - info
+        - success
+        - warning
+    - name: url
+      label: Optional link
+      type: string
+    - name: link_label
+      label: Link label
+      type: string
+  buttons_block:
+    type: object
+    label: Buttons
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+    - name: items
+      label: Buttons
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{label}'
+      fields:
+      - name: label
+        type: string
+        required: true
+      - name: url
+        type: string
+        required: true
+      - name: style
+        type: select
+        options:
+          values:
+          - primary
+          - secondary
+          - text
+  cards_block:
+    type: object
+    label: Cards
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+    - name: items
+      label: Cards
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: title
+        type: string
+        required: true
+      - name: text
+        type: text
+      - name: image
+        type: image
+        options:
+          media: images
+          rename: safe
+      - name: alt
+        label: Image alt text
+        type: string
+      - name: url
+        type: string
+      - name: link_label
+        type: string
+  contact_methods_block:
+    type: object
+    label: Contact methods
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+  academic_links_block:
+    type: object
+    label: Academic links
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+  research_themes_block:
+    type: object
+    label: Research themes
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+  education_timeline_block:
+    type: object
+    label: Education timeline
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+  publication_index_block:
+    type: object
+    label: Publication index
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+    - name: mode
+      label: Items
+      type: select
+      options:
+        values:
+        - name: all
+          label: All publications
+        - name: featured
+          label: Featured only
+  news_list_block:
+    type: object
+    label: News list
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+    - name: mode
+      label: Items
+      type: select
+      options:
+        values:
+        - latest
+        - all
+        - featured
+    - name: limit
+      label: Maximum items
+      type: number
+  experience_list_block:
+    type: object
+    label: Experience list
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+  projects_list_block:
+    type: object
+    label: Projects list
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+  awards_list_block:
+    type: object
+    label: Awards list
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+  skills_list_block:
+    type: object
+    label: Skills list
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+  downloads_block:
+    type: object
+    label: Downloads / CV
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+  accordion_block:
+    type: object
+    label: Accordion
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+    - name: items
+      label: Accordion items
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: title
+        type: string
+        required: true
+      - name: body
+        type: text
+        required: true
+  divider_block:
+    type: object
+    label: Divider
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+  search_block:
+    type: object
+    label: Search
+    fields:
+    - name: id
+      label: Block ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable ID. Use lowercase letters, numbers, and hyphens.
+    - name: enabled
+      label: Visible / نمایش
+      type: boolean
+settings:
+  content:
+    merge: true
+content:
+- name: english
+  label: English
+  type: group
+  items:
+  - name: en_profile
+    label: Profile & Contact
+    type: file
+    path: content/en/profile.json
+    format: json
+    fields:
+    - name: name
+      label: Full name
+      type: string
+      required: true
+    - name: headline
+      label: Academic headline
+      type: string
+      required: true
+    - name: affiliation
+      label: Affiliation
+      type: string
+      required: true
+    - name: location
+      label: Public location
+      type: string
+    - name: email
+      label: Legacy primary email (compatibility)
+      type: string
+      required: false
+      description: New public contact methods are managed in Contact methods below.
+    - name: eyebrow
+      label: Home-page eyebrow
+      type: string
+    - name: bio
+      label: Research profile
+      type: text
+    - name: short_bio
+      label: Short biography
+      type: text
+    - name: links
+      label: Academic profile links
+      type: object
+      fields:
+      - name: google_scholar
+        label: Google Scholar
+        type: string
+      - name: orcid
+        label: ORCID
+        type: string
+      - name: researchgate
+        label: ResearchGate
+        type: string
+      - name: linkedin
+        label: LinkedIn
+        type: string
+      - name: github
+        label: GitHub
+        type: string
+      - name: institutional_profile
+        label: Institutional profile
+        type: string
+    - &id008
+      name: contacts
+      label: Contact methods / راه‌های ارتباطی
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{label} — {value}'
+      description: Only add contact details you intentionally want to publish on this public website.
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: type
+        label: Type
+        type: select
+        required: true
+        options:
+          values:
+          - name: email
+            label: Email
+          - name: phone
+            label: Phone
+          - name: whatsapp
+            label: WhatsApp
+          - name: telegram
+            label: Telegram
+          - name: website
+            label: Website
+          - name: office
+            label: Office
+          - name: location
+            label: Location
+          - name: custom
+            label: Custom
+      - name: label
+        label: Public label
+        type: string
+        required: true
+      - name: value
+        label: Public value
+        type: string
+        required: true
+      - name: url
+        label: Optional explicit URL
+        type: string
+      - name: enabled
+        label: Enabled
+        type: boolean
+      - name: show_home
+        label: Show on homepage
+        type: boolean
+      - name: show_contact
+        label: Show on contact page
+        type: boolean
+      - name: show_footer
+        label: Show in footer
+        type: boolean
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: en_education
+    label: Education
+    type: file
+    path: content/en/education.json
+    format: json
+    fields:
+    - name: items
+      label: Degrees
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{degree} — {institution}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: degree
+        label: Degree
+        type: string
+        required: true
+      - name: institution
+        label: Institution
+        type: string
+        required: true
+      - name: field
+        label: Field
+        type: string
+      - name: period
+        label: Period / status
+        type: string
+      - name: gpa
+        label: GPA
+        type: string
+      - name: note
+        label: Note
+        type: text
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: en_research
+    label: Research
+    type: file
+    path: content/en/research.json
+    format: json
+    fields:
+    - name: intro
+      label: Research-page introduction
+      type: text
+    - name: interests
+      label: Research interests
+      type: string
+      list: true
+    - name: themes
+      label: Research themes
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+    - name: thesis
+      label: Master's thesis
+      type: object
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: English rendering
+        type: string
+        required: true
+      - name: title_fa
+        label: Persian title
+        type: string
+      - name: degree
+        label: Degree
+        type: string
+      - name: institution
+        label: Institution
+        type: string
+      - name: supervisor
+        label: Supervisor
+        type: string
+      - name: grade
+        label: Grade
+        type: string
+      - name: note
+        label: Note
+        type: text
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: en_publications
+    label: Publications
+    type: file
+    path: content/en/publications.json
+    format: json
+    fields:
+    - name: intro
+      label: Publications-page introduction
+      type: text
+    - name: items
+      label: Publications & presentations
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title} — {year}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: English rendering
+        type: string
+        required: true
+      - name: official_english_title
+        label: Official English title (only if verified)
+        type: string
+      - name: title_fa
+        label: Persian title
+        type: string
+      - name: type
+        label: Output type
+        type: select
+        required: true
+        options:
+          values:
+          - name: journal
+            label: Journal article
+          - name: conference
+            label: Conference paper / presentation
+          - name: working_paper
+            label: Working paper
+          - name: book_chapter
+            label: Book chapter
+          - name: report
+            label: Research report
+      - name: status
+        label: Publication status
+        type: select
+        options:
+          values:
+          - name: accepted
+            label: Accepted
+          - name: published
+            label: Published
+          - name: published_or_accepted
+            label: Published / accepted (source is ambiguous)
+          - name: working_paper
+            label: Working paper
+          - name: under_review
+            label: Under review
+      - name: authors
+        label: Authors
+        type: string
+        list: true
+      - name: corresponding_author
+        label: Corresponding author
+        type: string
+      - name: venue
+        label: Venue as reported
+        type: string
+      - name: venue_english_rendering
+        label: English venue rendering
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: doi
+        label: DOI (verified only)
+        type: string
+      - name: url
+        label: Publication URL (verified only)
+        type: string
+      - name: abstract
+        label: Abstract / چکیده
+        type: text
+      - name: keywords
+        label: Keywords / کلیدواژه‌ها
+        type: string
+        list: true
+      - name: volume
+        label: Volume (verified only)
+        type: string
+      - name: issue
+        label: Issue (verified only)
+        type: string
+      - name: pages
+        label: Pages (verified only)
+        type: string
+      - name: pdf
+        label: PDF / فایل مقاله
+        type: file
+        options:
+          media: publication_files
+          extensions:
+          - pdf
+          rename: safe
+      - name: data_url
+        label: Data URL / پیوند داده
+        type: string
+      - name: code_url
+        label: Code URL / پیوند کد
+        type: string
+      - name: replication_url
+        label: Replication URL / بسته بازتولید
+        type: string
+      - name: note
+        label: Note
+        type: text
+      - name: featured
+        label: Feature on CV/home
+        type: boolean
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: en_projects
+    label: Projects
+    type: file
+    path: content/en/projects.json
+    format: json
+    fields:
+    - name: items
+      label: Research projects
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: English title
+        type: string
+        required: true
+      - name: title_fa
+        label: Persian title
+        type: string
+      - name: role
+        label: Role
+        type: string
+      - name: lead
+        label: Project lead
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: url
+        label: Project URL
+        type: string
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: en_experience
+    label: Experience & Service
+    type: file
+    path: content/en/experience.json
+    format: json
+    fields:
+    - name: items
+      label: Experience entries
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title} — {period}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values:
+          - name: research
+            label: Research
+          - name: professional
+            label: Professional
+          - name: service
+            label: Academic service
+          - name: other
+            label: Other
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: organization
+        label: Organization
+        type: string
+      - name: period
+        label: Period
+        type: string
+      - name: description
+        label: Description
+        type: text
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: en_awards
+    label: Awards
+    type: file
+    path: content/en/awards.json
+    format: json
+    fields:
+    - name: items
+      label: Honors & awards
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title} — {year}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: issuer
+        label: Issuer
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: description
+        label: Description
+        type: text
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: en_skills
+    label: Skills & Certificates
+    type: file
+    path: content/en/skills.json
+    format: json
+    fields:
+    - name: groups
+      label: Skill / training groups
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: Group title
+        type: string
+        required: true
+      - name: items
+        label: Items
+        type: string
+        list: true
+    - name: note
+      label: Public note
+      type: text
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: en_news
+    label: News & Updates
+    type: file
+    path: content/en/news.json
+    format: json
+    fields:
+    - name: intro
+      label: Page introduction / معرفی صفحه
+      type: text
+    - name: items
+      label: Updates / تازه‌ها
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title} — {date}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: summary
+        label: Summary
+        type: text
+      - name: category
+        label: Category
+        type: string
+      - name: url
+        label: Optional link
+        type: string
+      - name: featured
+        label: Feature on homepage
+        type: boolean
+      - name: published
+        label: Publicly visible
+        type: boolean
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: en_pages
+    label: Pages
+    type: collection
+    path: content/pages/en
+    format: json
+    filename:
+      template: '{id}.json'
+      field: create
+    view:
+      fields:
+      - title
+      - slug
+      - status
+      - translation_key
+      primary: title
+      sort:
+      - title
+      - slug
+      - status
+      search:
+      - title
+      - slug
+      - id
+      - translation_key
+    operations:
+      create: true
+      rename: true
+      delete: true
+    fields:
+    - name: id
+      label: Stable page ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable internal ID. Avoid changing after publishing.
+    - name: slug
+      label: Public URL slug
+      type: string
+      pattern:
+        regex: ^$|^[a-z0-9]+(?:-[a-z0-9]+)*$
+        message: Use lowercase letters, numbers, and hyphens only. Home uses an empty slug.
+    - name: translation_key
+      label: Translation key
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+    - name: title
+      label: Page title
+      type: string
+      required: true
+    - name: menu_label
+      label: Default menu label
+      type: string
+    - name: status
+      label: Status
+      type: select
+      required: true
+      options:
+        values:
+        - name: published
+          label: Published
+        - name: draft
+          label: Draft
+    - name: layout
+      label: Layout
+      type: select
+      options:
+        values:
+        - standard
+        - landing
+        - cards
+        - minimal
+    - name: show_breadcrumbs
+      label: Show breadcrumbs
+      type: boolean
+    - name: show_in_sitemap
+      label: Include in sitemap
+      type: boolean
+    - name: redirect_from
+      label: Old paths / redirect aliases
+      type: string
+      list: true
+      description: 'Examples: papers.html or old-page.html. Do not include the leading slash.'
+    - name: seo
+      component: seo
+      label: SEO
+    - name: blocks
+      label: Page blocks
+      type: block
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{type} — {id}'
+      blockKey: type
+      blocks:
+      - name: profile_hero
+        component: profile_hero_block
+      - name: heading
+        component: heading_block
+      - name: rich_text
+        component: rich_text_block
+      - name: image
+        component: image_block
+      - name: callout
+        component: callout_block
+      - name: buttons
+        component: buttons_block
+      - name: cards
+        component: cards_block
+      - name: contact_methods
+        component: contact_methods_block
+      - name: academic_links
+        component: academic_links_block
+      - name: research_themes
+        component: research_themes_block
+      - name: education_timeline
+        component: education_timeline_block
+      - name: publication_index
+        component: publication_index_block
+      - name: news_list
+        component: news_list_block
+      - name: experience_list
+        component: experience_list_block
+      - name: projects_list
+        component: projects_list_block
+      - name: awards_list
+        component: awards_list_block
+      - name: skills_list
+        component: skills_list_block
+      - name: downloads
+        component: downloads_block
+      - name: accordion
+        component: accordion_block
+      - name: divider
+        component: divider_block
+      - name: search
+        component: search_block
+  - name: en_site
+    label: Site & Navigation
+    type: file
+    path: content/en/site.json
+    format: json
+    fields:
+    - name: site_title
+      label: Site title
+      type: string
+      required: true
+    - name: default_description
+      label: SEO description
+      type: text
+    - name: keywords
+      label: SEO keywords
+      type: string
+      list: true
+    - name: page_seo
+      label: Page SEO / سئوی صفحات
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{id} — {title}'
+      fields:
+      - name: id
+        label: Page ID
+        type: select
+        options:
+          values:
+          - home
+          - research
+          - publications
+          - experience
+          - cv
+          - contact
+          - teaching
+          - news
+          - search
+      - name: title
+        label: SEO title
+        type: string
+      - name: description
+        label: SEO description
+        type: text
+    - name: footer_label
+      label: Footer label
+      type: string
+    - name: navigation
+      label: Navigation / منوی سایت
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{label}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - &id001
+        name: label
+        label: Label
+        type: string
+        required: true
+      - &id002
+        name: enabled
+        label: Enabled
+        type: boolean
+      - &id003
+        name: destination
+        label: Destination type
+        type: select
+        options:
+          values:
+          - page
+          - section
+          - external
+          - file
+      - &id004
+        name: page
+        label: Internal page
+        type: reference
+        options:
+          collection: en_pages
+          search: title,slug,id
+          value: '{fields.id}'
+          label: '{fields.title} ({fields.slug})'
+      - &id005
+        name: section
+        label: 'Section anchor (without #)'
+        type: string
+      - &id006
+        name: url
+        label: External/file URL
+        type: string
+      - &id007
+        name: new_tab
+        label: Open in new tab
+        type: boolean
+      - name: children
+        label: Submenu items
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{label}'
+        fields:
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
+        - *id007
+    - name: announcement
+      label: Optional announcement
+      type: text
+    - name: announcement_enabled
+      label: Show announcement
+      type: boolean
+    - name: ui
+      label: Interface text / متن‌های رابط
+      type: object
+      fields:
+      - name: home_about_eyebrow
+        label: Home About Eyebrow
+        type: string
+      - name: home_about_title
+        label: Home About Title
+        type: string
+      - name: home_research_eyebrow
+        label: Home Research Eyebrow
+        type: string
+      - name: home_research_title
+        label: Home Research Title
+        type: string
+      - name: home_education_eyebrow
+        label: Home Education Eyebrow
+        type: string
+      - name: home_education_title
+        label: Home Education Title
+        type: string
+      - name: research_eyebrow
+        label: Research Eyebrow
+        type: string
+      - name: research_title
+        label: Research Title
+        type: string
+      - name: research_areas_label
+        label: Research Areas Label
+        type: string
+      - name: research_thesis_label
+        label: Research Thesis Label
+        type: string
+      - name: research_projects_label
+        label: Research Projects Label
+        type: string
+      - name: publications_eyebrow
+        label: Publications Eyebrow
+        type: string
+      - name: publications_title
+        label: Publications Title
+        type: string
+      - name: experience_eyebrow
+        label: Experience Eyebrow
+        type: string
+      - name: experience_title
+        label: Experience Title
+        type: string
+      - name: experience_lede
+        label: Experience Lede
+        type: string
+      - name: experience_honors_label
+        label: Experience Honors Label
+        type: string
+      - name: experience_training_label
+        label: Experience Training Label
+        type: string
+      - name: contact_eyebrow
+        label: Contact Eyebrow
+        type: string
+      - name: contact_title
+        label: Contact Title
+        type: string
+      - name: contact_lede
+        label: Contact Lede
+        type: string
+      - name: contact_profiles_label
+        label: Contact Profiles Label
+        type: string
+      - name: teaching_eyebrow
+        label: Teaching Eyebrow
+        type: string
+      - name: teaching_title
+        label: Teaching Title
+        type: string
+      - name: teaching_lede
+        label: Teaching Lede
+        type: string
+      - name: cv_education_label
+        label: Cv Education Label
+        type: string
+      - name: cv_interests_label
+        label: Cv Interests Label
+        type: string
+      - name: cv_publications_label
+        label: Cv Publications Label
+        type: string
+      - name: cv_projects_label
+        label: Cv Projects Label
+        type: string
+      - name: cv_service_label
+        label: Cv Service Label
+        type: string
+      - name: cv_note
+        label: Cv Note
+        type: string
+      - name: view_research
+        label: View Research
+        type: string
+      - name: download_cv
+        label: Download Cv
+        type: string
+      - name: download_pdf
+        label: Download Pdf
+        type: string
+      - name: download_docx
+        label: Download Docx
+        type: string
+      - name: print
+        label: Print
+        type: string
+      - name: home_news_eyebrow
+        label: home_news_eyebrow
+        type: string
+      - name: home_news_title
+        label: home_news_title
+        type: string
+      - name: home_news_link
+        label: home_news_link
+        type: string
+      - name: news_eyebrow
+        label: news_eyebrow
+        type: string
+      - name: news_title
+        label: news_title
+        type: string
+      - name: news_empty
+        label: news_empty
+        type: string
+      - name: search_eyebrow
+        label: search_eyebrow
+        type: string
+      - name: search_title
+        label: search_title
+        type: string
+      - name: search_placeholder
+        label: search_placeholder
+        type: string
+      - name: search_no_results
+        label: search_no_results
+        type: string
+      - name: search_results_label
+        label: search_results_label
+        type: string
+      - name: publication_search_placeholder
+        label: publication_search_placeholder
+        type: string
+      - name: publication_all_types
+        label: publication_all_types
+        type: string
+      - name: publication_all_statuses
+        label: publication_all_statuses
+        type: string
+      - name: publication_all_years
+        label: publication_all_years
+        type: string
+      - name: publication_clear_filters
+        label: publication_clear_filters
+        type: string
+      - name: citation_copy
+        label: citation_copy
+        type: string
+      - name: citation_bibtex
+        label: citation_bibtex
+        type: string
+      - name: citation_ris
+        label: citation_ris
+        type: string
+      - name: citation_copied
+        label: citation_copied
+        type: string
+      - name: abstract_label
+        label: abstract_label
+        type: string
+      - name: keywords_label
+        label: keywords_label
+        type: string
+      - name: pdf_label
+        label: pdf_label
+        type: string
+      - name: data_label
+        label: data_label
+        type: string
+      - name: code_label
+        label: code_label
+        type: string
+      - name: replication_label
+        label: replication_label
+        type: string
+      - name: theme_light
+        label: theme_light
+        type: string
+      - name: theme_dark
+        label: theme_dark
+        type: string
+      - name: theme_system
+        label: theme_system
+        type: string
+      - name: search_button
+        label: search_button
+        type: string
+    operations:
+      create: false
+      rename: false
+      delete: false
+- name: persian
+  label: فارسی
+  type: group
+  items:
+  - name: fa_profile
+    label: مشخصات و ارتباط
+    type: file
+    path: content/fa/profile.json
+    format: json
+    fields:
+    - name: name
+      label: Full name
+      type: string
+      required: true
+    - name: headline
+      label: Academic headline
+      type: string
+      required: true
+    - name: affiliation
+      label: Affiliation
+      type: string
+      required: true
+    - name: location
+      label: Public location
+      type: string
+    - name: email
+      label: Legacy primary email (compatibility)
+      type: string
+      required: false
+      description: New public contact methods are managed in Contact methods below.
+    - name: eyebrow
+      label: Home-page eyebrow
+      type: string
+    - name: bio
+      label: Research profile
+      type: text
+    - name: short_bio
+      label: Short biography
+      type: text
+    - name: links
+      label: Academic profile links
+      type: object
+      fields:
+      - name: google_scholar
+        label: Google Scholar
+        type: string
+      - name: orcid
+        label: ORCID
+        type: string
+      - name: researchgate
+        label: ResearchGate
+        type: string
+      - name: linkedin
+        label: LinkedIn
+        type: string
+      - name: github
+        label: GitHub
+        type: string
+      - name: institutional_profile
+        label: Institutional profile
+        type: string
+    - *id008
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: fa_education
+    label: تحصیلات
+    type: file
+    path: content/fa/education.json
+    format: json
+    fields:
+    - name: items
+      label: Degrees
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{degree} — {institution}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: degree
+        label: Degree
+        type: string
+        required: true
+      - name: institution
+        label: Institution
+        type: string
+        required: true
+      - name: field
+        label: Field
+        type: string
+      - name: period
+        label: Period / status
+        type: string
+      - name: gpa
+        label: GPA
+        type: string
+      - name: note
+        label: Note
+        type: text
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: fa_research
+    label: پژوهش
+    type: file
+    path: content/fa/research.json
+    format: json
+    fields:
+    - name: intro
+      label: Research-page introduction
+      type: text
+    - name: interests
+      label: Research interests
+      type: string
+      list: true
+    - name: themes
+      label: Research themes
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+    - name: thesis
+      label: Master's thesis
+      type: object
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: English rendering
+        type: string
+        required: true
+      - name: title_fa
+        label: Persian title
+        type: string
+      - name: degree
+        label: Degree
+        type: string
+      - name: institution
+        label: Institution
+        type: string
+      - name: supervisor
+        label: Supervisor
+        type: string
+      - name: grade
+        label: Grade
+        type: string
+      - name: note
+        label: Note
+        type: text
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: fa_publications
+    label: انتشارات
+    type: file
+    path: content/fa/publications.json
+    format: json
+    fields:
+    - name: intro
+      label: Publications-page introduction
+      type: text
+    - name: items
+      label: Publications & presentations
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title} — {year}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: English rendering
+        type: string
+        required: true
+      - name: official_english_title
+        label: Official English title (only if verified)
+        type: string
+      - name: title_fa
+        label: Persian title
+        type: string
+      - name: type
+        label: Output type
+        type: select
+        required: true
+        options:
+          values:
+          - name: journal
+            label: مقاله مجله
+          - name: conference
+            label: مقاله / ارائه کنفرانسی
+          - name: working_paper
+            label: مقاله در دست کار
+          - name: book_chapter
+            label: فصل کتاب
+          - name: report
+            label: گزارش پژوهشی
+      - name: status
+        label: Publication status
+        type: select
+        options:
+          values:
+          - name: accepted
+            label: Accepted
+          - name: published
+            label: Published
+          - name: published_or_accepted
+            label: Published / accepted (source is ambiguous)
+          - name: working_paper
+            label: Working paper
+          - name: under_review
+            label: Under review
+      - name: authors
+        label: Authors
+        type: string
+        list: true
+      - name: corresponding_author
+        label: Corresponding author
+        type: string
+      - name: venue
+        label: Venue as reported
+        type: string
+      - name: venue_english_rendering
+        label: English venue rendering
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: doi
+        label: DOI (verified only)
+        type: string
+      - name: url
+        label: Publication URL (verified only)
+        type: string
+      - name: abstract
+        label: Abstract / چکیده
+        type: text
+      - name: keywords
+        label: Keywords / کلیدواژه‌ها
+        type: string
+        list: true
+      - name: volume
+        label: Volume (verified only)
+        type: string
+      - name: issue
+        label: Issue (verified only)
+        type: string
+      - name: pages
+        label: Pages (verified only)
+        type: string
+      - name: pdf
+        label: PDF / فایل مقاله
+        type: file
+        options:
+          media: publication_files
+          extensions:
+          - pdf
+          rename: safe
+      - name: data_url
+        label: Data URL / پیوند داده
+        type: string
+      - name: code_url
+        label: Code URL / پیوند کد
+        type: string
+      - name: replication_url
+        label: Replication URL / بسته بازتولید
+        type: string
+      - name: note
+        label: Note
+        type: text
+      - name: featured
+        label: Feature on CV/home
+        type: boolean
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: fa_projects
+    label: طرح‌های پژوهشی
+    type: file
+    path: content/fa/projects.json
+    format: json
+    fields:
+    - name: items
+      label: Research projects
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: English title
+        type: string
+        required: true
+      - name: title_fa
+        label: Persian title
+        type: string
+      - name: role
+        label: Role
+        type: string
+      - name: lead
+        label: Project lead
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: url
+        label: Project URL
+        type: string
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: fa_experience
+    label: سوابق و فعالیت‌ها
+    type: file
+    path: content/fa/experience.json
+    format: json
+    fields:
+    - name: items
+      label: Experience entries
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title} — {period}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values:
+          - name: research
+            label: Research
+          - name: professional
+            label: Professional
+          - name: service
+            label: Academic service
+          - name: other
+            label: Other
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: organization
+        label: Organization
+        type: string
+      - name: period
+        label: Period
+        type: string
+      - name: description
+        label: Description
+        type: text
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: fa_awards
+    label: افتخارات
+    type: file
+    path: content/fa/awards.json
+    format: json
+    fields:
+    - name: items
+      label: Honors & awards
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title} — {year}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: issuer
+        label: Issuer
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: description
+        label: Description
+        type: text
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: fa_skills
+    label: مهارت‌ها و گواهی‌ها
+    type: file
+    path: content/fa/skills.json
+    format: json
+    fields:
+    - name: groups
+      label: Skill / training groups
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: title
+        label: Group title
+        type: string
+        required: true
+      - name: items
+        label: Items
+        type: string
+        list: true
+    - name: note
+      label: Public note
+      type: text
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: fa_news
+    label: اخبار و تازه‌ها
+    type: file
+    path: content/fa/news.json
+    format: json
+    fields:
+    - name: intro
+      label: Page introduction / معرفی صفحه
+      type: text
+    - name: items
+      label: Updates / تازه‌ها
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title} — {date}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: summary
+        label: Summary
+        type: text
+      - name: category
+        label: Category
+        type: string
+      - name: url
+        label: Optional link
+        type: string
+      - name: featured
+        label: Feature on homepage
+        type: boolean
+      - name: published
+        label: Publicly visible
+        type: boolean
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: fa_pages
+    label: صفحات
+    type: collection
+    path: content/pages/fa
+    format: json
+    filename:
+      template: '{id}.json'
+      field: create
+    view:
+      fields:
+      - title
+      - slug
+      - status
+      - translation_key
+      primary: title
+      sort:
+      - title
+      - slug
+      - status
+      search:
+      - title
+      - slug
+      - id
+      - translation_key
+    operations:
+      create: true
+      rename: true
+      delete: true
+    fields:
+    - name: id
+      label: Stable page ID
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+      description: Stable internal ID. Avoid changing after publishing.
+    - name: slug
+      label: Public URL slug
+      type: string
+      pattern:
+        regex: ^$|^[a-z0-9]+(?:-[a-z0-9]+)*$
+        message: Use lowercase letters, numbers, and hyphens only. Home uses an empty slug.
+    - name: translation_key
+      label: Translation key
+      type: string
+      required: true
+      pattern: ^[a-z0-9-]+$
+    - name: title
+      label: Page title
+      type: string
+      required: true
+    - name: menu_label
+      label: Default menu label
+      type: string
+    - name: status
+      label: Status
+      type: select
+      required: true
+      options:
+        values:
+        - name: published
+          label: Published
+        - name: draft
+          label: Draft
+    - name: layout
+      label: Layout
+      type: select
+      options:
+        values:
+        - standard
+        - landing
+        - cards
+        - minimal
+    - name: show_breadcrumbs
+      label: Show breadcrumbs
+      type: boolean
+    - name: show_in_sitemap
+      label: Include in sitemap
+      type: boolean
+    - name: redirect_from
+      label: Old paths / redirect aliases
+      type: string
+      list: true
+      description: 'Examples: papers.html or old-page.html. Do not include the leading slash.'
+    - name: seo
+      component: seo
+      label: SEO
+    - name: blocks
+      label: Page blocks
+      type: block
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{type} — {id}'
+      blockKey: type
+      blocks:
+      - name: profile_hero
+        component: profile_hero_block
+      - name: heading
+        component: heading_block
+      - name: rich_text
+        component: rich_text_block
+      - name: image
+        component: image_block
+      - name: callout
+        component: callout_block
+      - name: buttons
+        component: buttons_block
+      - name: cards
+        component: cards_block
+      - name: contact_methods
+        component: contact_methods_block
+      - name: academic_links
+        component: academic_links_block
+      - name: research_themes
+        component: research_themes_block
+      - name: education_timeline
+        component: education_timeline_block
+      - name: publication_index
+        component: publication_index_block
+      - name: news_list
+        component: news_list_block
+      - name: experience_list
+        component: experience_list_block
+      - name: projects_list
+        component: projects_list_block
+      - name: awards_list
+        component: awards_list_block
+      - name: skills_list
+        component: skills_list_block
+      - name: downloads
+        component: downloads_block
+      - name: accordion
+        component: accordion_block
+      - name: divider
+        component: divider_block
+      - name: search
+        component: search_block
+  - name: fa_site
+    label: سایت و منو
+    type: file
+    path: content/fa/site.json
+    format: json
+    fields:
+    - name: site_title
+      label: Site title
+      type: string
+      required: true
+    - name: default_description
+      label: SEO description
+      type: text
+    - name: keywords
+      label: کلیدواژه‌های SEO
+      type: string
+      list: true
+    - name: page_seo
+      label: Page SEO / سئوی صفحات
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{id} — {title}'
+      fields:
+      - name: id
+        label: Page ID
+        type: select
+        options:
+          values:
+          - home
+          - research
+          - publications
+          - experience
+          - cv
+          - contact
+          - teaching
+          - news
+          - search
+      - name: title
+        label: SEO title
+        type: string
+      - name: description
+        label: SEO description
+        type: text
+    - name: footer_label
+      label: Footer label
+      type: string
+    - name: navigation
+      label: Navigation / منوی سایت
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{label}'
+      fields:
+      - name: id
+        label: Stable ID
+        type: string
+        required: true
+        pattern: ^[a-z0-9-]+$
+      - &id009
+        name: label
+        label: Label
+        type: string
+        required: true
+      - &id010
+        name: enabled
+        label: Enabled
+        type: boolean
+      - &id011
+        name: destination
+        label: Destination type
+        type: select
+        options:
+          values:
+          - page
+          - section
+          - external
+          - file
+      - &id012
+        name: page
+        label: Internal page
+        type: reference
+        options:
+          collection: fa_pages
+          search: title,slug,id
+          value: '{fields.id}'
+          label: '{fields.title} ({fields.slug})'
+      - &id013
+        name: section
+        label: 'Section anchor (without #)'
+        type: string
+      - &id014
+        name: url
+        label: External/file URL
+        type: string
+      - &id015
+        name: new_tab
+        label: Open in new tab
+        type: boolean
+      - name: children
+        label: Submenu items
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{label}'
+        fields:
+        - *id009
+        - *id010
+        - *id011
+        - *id012
+        - *id013
+        - *id014
+        - *id015
+    - name: announcement
+      label: Optional announcement
+      type: text
+    - name: announcement_enabled
+      label: نمایش اطلاعیه
+      type: boolean
+    - name: ui
+      label: متن‌های رابط و عنوان‌ها
+      type: object
+      fields:
+      - name: home_about_eyebrow
+        label: home_about_eyebrow
+        type: string
+      - name: home_about_title
+        label: home_about_title
+        type: string
+      - name: home_research_eyebrow
+        label: home_research_eyebrow
+        type: string
+      - name: home_research_title
+        label: home_research_title
+        type: string
+      - name: home_education_eyebrow
+        label: home_education_eyebrow
+        type: string
+      - name: home_education_title
+        label: home_education_title
+        type: string
+      - name: research_eyebrow
+        label: research_eyebrow
+        type: string
+      - name: research_title
+        label: research_title
+        type: string
+      - name: research_areas_label
+        label: research_areas_label
+        type: string
+      - name: research_thesis_label
+        label: research_thesis_label
+        type: string
+      - name: research_projects_label
+        label: research_projects_label
+        type: string
+      - name: publications_eyebrow
+        label: publications_eyebrow
+        type: string
+      - name: publications_title
+        label: publications_title
+        type: string
+      - name: experience_eyebrow
+        label: experience_eyebrow
+        type: string
+      - name: experience_title
+        label: experience_title
+        type: string
+      - name: experience_lede
+        label: experience_lede
+        type: string
+      - name: experience_honors_label
+        label: experience_honors_label
+        type: string
+      - name: experience_training_label
+        label: experience_training_label
+        type: string
+      - name: contact_eyebrow
+        label: contact_eyebrow
+        type: string
+      - name: contact_title
+        label: contact_title
+        type: string
+      - name: contact_lede
+        label: contact_lede
+        type: string
+      - name: contact_profiles_label
+        label: contact_profiles_label
+        type: string
+      - name: teaching_eyebrow
+        label: teaching_eyebrow
+        type: string
+      - name: teaching_title
+        label: teaching_title
+        type: string
+      - name: teaching_lede
+        label: teaching_lede
+        type: string
+      - name: cv_education_label
+        label: cv_education_label
+        type: string
+      - name: cv_interests_label
+        label: cv_interests_label
+        type: string
+      - name: cv_publications_label
+        label: cv_publications_label
+        type: string
+      - name: cv_projects_label
+        label: cv_projects_label
+        type: string
+      - name: cv_service_label
+        label: cv_service_label
+        type: string
+      - name: cv_note
+        label: cv_note
+        type: string
+      - name: view_research
+        label: view_research
+        type: string
+      - name: download_cv
+        label: download_cv
+        type: string
+      - name: download_pdf
+        label: download_pdf
+        type: string
+      - name: download_docx
+        label: download_docx
+        type: string
+      - name: print
+        label: print
+        type: string
+      - name: home_news_eyebrow
+        label: home_news_eyebrow
+        type: string
+      - name: home_news_title
+        label: home_news_title
+        type: string
+      - name: home_news_link
+        label: home_news_link
+        type: string
+      - name: news_eyebrow
+        label: news_eyebrow
+        type: string
+      - name: news_title
+        label: news_title
+        type: string
+      - name: news_empty
+        label: news_empty
+        type: string
+      - name: search_eyebrow
+        label: search_eyebrow
+        type: string
+      - name: search_title
+        label: search_title
+        type: string
+      - name: search_placeholder
+        label: search_placeholder
+        type: string
+      - name: search_no_results
+        label: search_no_results
+        type: string
+      - name: search_results_label
+        label: search_results_label
+        type: string
+      - name: publication_search_placeholder
+        label: publication_search_placeholder
+        type: string
+      - name: publication_all_types
+        label: publication_all_types
+        type: string
+      - name: publication_all_statuses
+        label: publication_all_statuses
+        type: string
+      - name: publication_all_years
+        label: publication_all_years
+        type: string
+      - name: publication_clear_filters
+        label: publication_clear_filters
+        type: string
+      - name: citation_copy
+        label: citation_copy
+        type: string
+      - name: citation_bibtex
+        label: citation_bibtex
+        type: string
+      - name: citation_ris
+        label: citation_ris
+        type: string
+      - name: citation_copied
+        label: citation_copied
+        type: string
+      - name: abstract_label
+        label: abstract_label
+        type: string
+      - name: keywords_label
+        label: keywords_label
+        type: string
+      - name: pdf_label
+        label: pdf_label
+        type: string
+      - name: data_label
+        label: data_label
+        type: string
+      - name: code_label
+        label: code_label
+        type: string
+      - name: replication_label
+        label: replication_label
+        type: string
+      - name: theme_light
+        label: theme_light
+        type: string
+      - name: theme_dark
+        label: theme_dark
+        type: string
+      - name: theme_system
+        label: theme_system
+        type: string
+      - name: search_button
+        label: search_button
+        type: string
+    operations:
+      create: false
+      rename: false
+      delete: false
+- name: design_branding
+  label: Design & Branding — ظاهر و تنظیمات اصلی
+  type: file
+  path: content/settings/design.json
+  format: json
+  fields:
+  - name: branding
+    label: Branding / برندینگ
+    type: object
+    fields:
+    - name: logo
+      label: Header logo / لوگوی سربرگ
+      type: image
+      options:
+        extensions:
+        - jpg
+        - jpeg
+        - png
+        - webp
+        - svg
+        rename: safe
+        media: images
+    - name: favicon
+      label: Favicon / آیکون سایت
+      type: image
+      options:
+        extensions:
+        - svg
+        - png
+        - jpg
+        - jpeg
+        - webp
+        rename: safe
+        media: images
+    - name: profile_image
+      label: Profile photo / عکس پروفایل
+      type: image
+      options:
+        extensions:
+        - jpg
+        - jpeg
+        - png
+        - webp
+        rename: safe
+        media: images
+    - name: cv_pdf
+      label: CV PDF / رزومه PDF
+      type: file
+      options:
+        extensions:
+        - pdf
+        rename: safe
+        media: documents
+    - name: cv_docx
+      label: CV Word / رزومه Word
+      type: file
+      options:
+        extensions:
+        - docx
+        rename: safe
+        media: documents
+    - name: open_graph_image
+      label: Social preview image / تصویر اشتراک‌گذاری
+      type: image
+      options:
+        extensions:
+        - jpg
+        - jpeg
+        - png
+        - webp
+        rename: safe
+        media: images
+  - name: colors
+    label: Colors / رنگ‌ها
+    type: object
+    fields:
+    - name: background
+      label: Background
+      type: string
+    - name: surface
+      label: Cards / surface
+      type: string
+    - name: text
+      label: Main text
+      type: string
+    - name: muted
+      label: Muted text
+      type: string
+    - name: line
+      label: Borders
+      type: string
+    - name: accent
+      label: Primary accent
+      type: string
+    - name: accent_secondary
+      label: Secondary accent
+      type: string
+    - name: soft
+      label: Soft background
+      type: string
+  - name: dark_colors
+    label: Dark theme colors / رنگ‌های حالت تیره
+    type: object
+    fields:
+    - name: background
+      label: Background
+      type: string
+    - name: surface
+      label: Cards / surface
+      type: string
+    - name: text
+      label: Main text
+      type: string
+    - name: muted
+      label: Muted text
+      type: string
+    - name: line
+      label: Borders
+      type: string
+    - name: accent
+      label: Primary accent
+      type: string
+    - name: accent_secondary
+      label: Secondary accent
+      type: string
+    - name: soft
+      label: Soft background
+      type: string
+  - name: typography
+    label: Typography / تایپوگرافی
+    type: object
+    fields:
+    - name: english_font
+      label: English font
+      type: select
+      options:
+        values:
+        - Times New Roman
+        - Georgia
+        - Arial
+        - Helvetica
+        - Verdana
+        - Tahoma
+    - name: persian_font
+      label: Persian font
+      type: select
+      options:
+        values:
+        - B Nazanin
+        - Nazanin
+        - Tahoma
+        - Arial
+        - Times New Roman
+    - name: base_font_size
+      label: Base font size (px)
+      type: number
+    - name: english_line_height
+      label: English line height
+      type: number
+    - name: persian_line_height
+      label: Persian line height
+      type: number
+    - name: hero_title_scale
+      label: Hero title scale
+      type: number
+  - name: layout
+    label: Layout / چیدمان
+    type: object
+    fields:
+    - name: max_width
+      label: Maximum content width (px)
+      type: number
+    - name: section_spacing
+      label: Section spacing (px)
+      type: number
+    - name: hero_space_top
+      label: Hero top spacing (px)
+      type: number
+    - name: hero_space_bottom
+      label: Hero bottom spacing (px)
+      type: number
+    - name: hero_gap
+      label: Hero text/image gap (px)
+      type: number
+    - name: portrait_size
+      label: Portrait width (%)
+      type: number
+    - name: portrait_radius
+      label: Portrait corner radius (px)
+      type: number
+    - name: button_radius
+      label: Button corner radius (px)
+      type: number
+    - name: card_radius
+      label: Card corner radius (px)
+      type: number
+    - name: nav_gap
+      label: Navigation gap (px)
+      type: number
+    - name: portrait_side
+      label: Portrait side
+      type: select
+      options:
+        values:
+        - name: automatic
+          label: Automatic by language
+        - name: left
+          label: Always left
+        - name: right
+          label: Always right
+  - name: controls
+    label: Site controls / کنترل‌های سایت
+    type: object
+    fields:
+    - name: sticky_header
+      label: Sticky header
+      type: boolean
+    - name: show_shadows
+      label: Show shadows
+      type: boolean
+    - name: show_language_switch
+      label: Show EN/فارسی switch
+      type: boolean
+    - name: show_footer
+      label: Show footer
+      type: boolean
+    - name: show_social_links_on_home
+      label: Show academic links on homepage
+      type: boolean
+    - name: show_brand_name
+      label: Show name next to logo / نمایش نام کنار لوگو
+      type: boolean
+    - name: show_theme_switch
+      label: Show Light/Dark/System switch
+      type: boolean
+    - name: show_search
+      label: Show global search
+      type: boolean
+  - name: home_sections
+    label: Homepage sections / بخش‌های صفحه اصلی
+    type: object
+    list:
+      collapsible:
+        collapsed: false
+        summary: '{id}'
+    fields:
+    - name: id
+      label: Section ID (hero/about/research/education)
+      type: select
+      options:
+        values:
+        - hero
+        - about
+        - research
+        - education
+        - news
+    - name: enabled
+      label: Visible
+      type: boolean
+  - name: theme
+    label: Theme preset / تم آماده
+    type: object
+    fields:
+    - name: preset
+      label: Color theme / تم رنگی
+      type: select
+      options:
+        values:
+        - name: classic-academic
+          label: Classic Academic — کلاسیک دانشگاهی
+        - name: oxford-navy
+          label: Oxford Navy — آکسفورد سرمه‌ای
+        - name: midnight-teal
+          label: Midnight Teal — سبزآبی مدرن
+        - name: burgundy-cream
+          label: Burgundy & Cream — زرشکی و کرم
+        - name: forest-ivory
+          label: Forest & Ivory — سبز و عاجی
+        - name: slate-blue
+          label: Slate Blue — آبی اسلیت
+        - name: monochrome-editorial
+          label: Monochrome Editorial — سیاه‌وسفید
+        - name: custom
+          label: Custom — سفارشی
+    - name: default_mode
+      label: Default Light/Dark mode
+      type: select
+      options:
+        values:
+        - system
+        - light
+        - dark
+  - name: analytics
+    label: Analytics / آمار بازدید (اختیاری)
+    type: object
+    fields:
+    - name: enabled
+      label: Enable analytics
+      type: boolean
+    - name: provider
+      label: Provider
+      type: select
+      options:
+        values:
+        - name: google_analytics
+          label: Google Analytics 4
+    - name: measurement_id
+      label: GA4 Measurement ID (G-...)
+      type: string
+      pattern: ^$|^G-[A-Z0-9]+$
+      description: Leave blank while analytics is disabled.
+  - name: seo
+    label: SEO & indexing / سئو و نمایه‌سازی
+    type: object
+    fields:
+    - name: site_url
+      label: Public site URL
+      type: string
+      required: true
+      pattern: ^https://.+
+    - name: structured_data_enabled
+      label: Enable Person/ProfilePage structured data
+      type: boolean
+    - name: indexing_enabled
+      label: Allow search-engine indexing
+      type: boolean
+  - name: custom_theme
+    label: Custom theme colors / رنگ‌های سفارشی
+    type: object
+    description: Used only when Theme preset = Custom.
+    fields:
+    - name: light
+      label: Light palette
+      type: object
+      fields: &id016
+      - name: background
+        label: Background
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: surface
+        label: Surface
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: surface_alt
+        label: Surface Alt
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: text
+        label: Text
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: text_muted
+        label: Text Muted
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: border
+        label: Border
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: accent
+        label: Accent
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: accent_hover
+        label: Accent Hover
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: accent_text
+        label: Accent Text
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: link
+        label: Link
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: link_hover
+        label: Link Hover
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: button_primary_bg
+        label: Button Primary Bg
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: button_primary_text
+        label: Button Primary Text
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: button_secondary_bg
+        label: Button Secondary Bg
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: button_secondary_text
+        label: Button Secondary Text
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: tag_bg
+        label: Tag Bg
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: tag_text
+        label: Tag Text
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: focus_ring
+        label: Focus Ring
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: success
+        label: Success
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: warning
+        label: Warning
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+      - name: danger
+        label: Danger
+        type: string
+        pattern: ^#[0-9A-Fa-f]{6}$
+    - name: dark
+      label: Dark palette
+      type: object
+      fields: *id016
+  - name: layout_presets
+    label: Layout presets / چیدمان‌های آماده
+    type: object
+    fields:
+    - name: content_width
+      label: Content width
+      type: select
+      options:
+        values:
+        - narrow
+        - standard
+        - wide
+        - custom
+    - name: hero_style
+      label: Hero style
+      type: select
+      options:
+        values:
+        - split
+        - centered
+        - compact
+    - name: section_density
+      label: Section density
+      type: select
+      options:
+        values:
+        - compact
+        - standard
+        - spacious
+    - name: card_style
+      label: Card style
+      type: select
+      options:
+        values:
+        - flat
+        - border
+        - elevated
+    - name: header_style
+      label: Header style
+      type: select
+      options:
+        values:
+        - standard
+        - compact
+    - name: corner_style
+      label: Corner style
+      type: select
+      options:
+        values:
+        - square
+        - subtle
+        - rounded
+  operations:
+    create: false
+    rename: false
+    delete: false
+actions:
+- name: validate-site
+  label: Validate site / بررسی سلامت سایت
+  workflow: validate.yml
+  ref: current
+  cancelable: false
