@@ -1,0 +1,1 @@
+{% if design.controls.show_footer %}<footer class="site-footer"><div class="footer-inner"><span>© {{ build_year }} {{ profile.name }}</span> · <span>{{ site.footer_label }}</span>{% if footer_contacts %}<div class="contact-list">{% for contact in footer_contacts %}{% include 'partials/contact_item.html' %}{% endfor %}</div>{% endif %}</div></footer>{% endif %}

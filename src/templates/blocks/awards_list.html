@@ -1,0 +1,1 @@
+<section class="block" id="{{ block.id }}">{% for item in data.awards['items'] %}<article class="surface"><h2>{{ item.title }}</h2><p>{{ item.issuer }}{% if item.year %} · {{ item.year }}{% endif %}</p>{% if item.description %}<p>{{ item.description }}</p>{% endif %}</article>{% endfor %}</section>

@@ -1,0 +1,12 @@
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="{{ home_href }}">{{ profile.name if design.controls.show_brand_name else site.site_title }}</a>
+  <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-navigation"><span aria-hidden="true">☰</span><span class="sr-only">{{ 'باز کردن منو' if locale == 'fa' else 'Open menu' }}</span></button>
+  <nav class="site-nav" id="primary-navigation" data-site-nav aria-label="{{ 'ناوبری اصلی' if locale == 'fa' else 'Primary navigation' }}"><ul class="nav-list">
+    {% for item in navigation %}<li class="nav-item"><a href="{{ item.href }}"{% if item.target %} target="{{ item.target }}" rel="{{ item.rel }}"{% endif %}>{{ item.label }}</a>{% if item.children %}<ul class="submenu">{% for child in item.children %}<li><a href="{{ child.href }}"{% if child.target %} target="{{ child.target }}" rel="{{ child.rel }}"{% endif %}>{{ child.label }}</a></li>{% endfor %}</ul>{% endif %}</li>{% endfor %}
+  </ul></nav>
+  <div class="header-tools">
+  {% if design.controls.show_search %}<a href="{{ search_href }}" aria-label="{{ 'جستجو' if locale == 'fa' else 'Search' }}">⌕</a>{% endif %}
+  {% if design.controls.show_language_switch and language_href %}<a href="{{ language_href }}" hreflang="{{ other_locale }}">{{ 'EN' if locale == 'fa' else 'فارسی' }}</a>{% endif %}
+  {% if design.controls.show_theme_switch %}<select class="theme-select" data-theme-select aria-label="{{ 'پوسته' if locale == 'fa' else 'Theme' }}"><option value="system">{{ site.ui.theme_system }}</option><option value="light">{{ site.ui.theme_light }}</option><option value="dark">{{ site.ui.theme_dark }}</option></select>{% endif %}
+  </div>
+</div></header>

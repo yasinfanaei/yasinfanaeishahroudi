@@ -1,0 +1,1 @@
+<div class="block button-row" id="{{ block.id }}">{% for button in block.get('items', []) %}<a class="button {{ button.style or 'secondary' }}" href="{{ button.url|site_href }}">{{ button.label }}</a>{% endfor %}</div>

@@ -1,0 +1,43 @@
+name: Validate Academic Site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Pages CMS action payload (optional)
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Install build dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Validate source repository
+        run: python scripts/check_site.py
+      - name: Check enhancement JavaScript syntax
+        run: node --check src/static/site.js
+      - name: Build static site
+        run: python -m src.build_site --output _site
+      - name: Validate generated site
+        run: python scripts/check_build.py _site

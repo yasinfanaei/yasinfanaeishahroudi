@@ -1,0 +1,1 @@
+<section class="block grid cards" id="{{ block.id }}">{% for group in data.skills['groups'] %}<article class="surface"><h2>{{ group.title }}</h2><div class="tags">{% for item in group['items'] %}<span class="tag">{{ item }}</span>{% endfor %}</div></article>{% endfor %}</section>

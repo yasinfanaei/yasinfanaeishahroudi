@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="{{ locale }}" dir="{{ 'rtl' if locale == 'fa' else 'ltr' }}" data-theme="{{ initial_theme }}" data-default-theme="{{ default_theme }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ seo.title }}</title>
+  <meta name="description" content="{{ seo.description }}">
+  <meta name="robots" content="{{ seo.robots }}">
+  <link rel="canonical" href="{{ seo.canonical }}">
+  {% for alt in seo.alternates %}<link rel="alternate" hreflang="{{ alt.lang }}" href="{{ alt.href }}">{% endfor %}
+  <meta property="og:title" content="{{ seo.title }}"><meta property="og:description" content="{{ seo.description }}"><meta property="og:type" content="website"><meta property="og:url" content="{{ seo.canonical }}">
+  {% if seo.image %}<meta property="og:image" content="{{ seo.image }}"><meta name="twitter:image" content="{{ seo.image }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{{ seo.title }}"><meta name="twitter:description" content="{{ seo.description }}">
+  {% if favicon %}<link rel="icon" href="{{ favicon|site_href }}">{% endif %}
+  <style>{{ theme_css|safe }}</style>
+  <link rel="stylesheet" href="{{ '/assets/style.css'|site_href }}">
+  {% for item in seo.jsonld %}<script type="application/ld+json">{{ item|tojson }}</script>{% endfor %}
+  {% if analytics.enabled %}<script async src="https://www.googletagmanager.com/gtag/js?id={{ analytics.measurement_id }}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config', '{{ analytics.measurement_id }}');</script>{% endif %}
+</head>
+<body data-page-id="{{ page.id }}" class="{{ layout_classes }}">
+<a class="skip-link" href="#main">{{ 'رفتن به محتوای اصلی' if locale == 'fa' else 'Skip to main content' }}</a>
+{% include 'partials/header.html' %}
+<main id="main" class="page-shell">
+  {% if page.show_breadcrumbs %}{% include 'partials/breadcrumbs.html' %}{% endif %}
+  {% block content %}{% endblock %}
+</main>
+{% include 'partials/footer.html' %}
+<script src="{{ '/assets/site.js'|site_href }}" defer></script>
+</body></html>

@@ -1,0 +1,34 @@
+<section class="block" id="{{ block.id }}" data-publication-index>
+  <div class="search-controls">
+    <input class="search-input" type="search" data-publication-search placeholder="{{ site.ui.publication_search_placeholder }}" aria-label="{{ site.ui.publication_search_placeholder }}">
+    <select data-publication-type aria-label="{{ site.ui.publication_all_types }}"><option value="">{{ site.ui.publication_all_types }}</option>{% for value in publication_filters.types %}<option value="{{ value }}">{{ value|replace('_',' ')|title }}</option>{% endfor %}</select>
+    <select data-publication-status aria-label="{{ site.ui.publication_all_statuses }}"><option value="">{{ site.ui.publication_all_statuses }}</option>{% for value in publication_filters.statuses %}<option value="{{ value }}">{{ value|replace('_',' ')|title }}</option>{% endfor %}</select>
+    <select data-publication-year aria-label="{{ site.ui.publication_all_years }}"><option value="">{{ site.ui.publication_all_years }}</option>{% for value in publication_filters.years %}<option value="{{ value }}">{{ value }}</option>{% endfor %}</select>
+    <button class="button secondary" type="button" data-publication-clear>{{ site.ui.publication_clear_filters }}</button>
+  </div>
+  <div>
+  {% for item in data.publications['items'] if block.mode == 'all' or item.featured %}
+    <article class="publication" data-publication data-type="{{ item.type }}" data-status="{{ item.status }}" data-year="{{ item.year }}">
+      <h2>{{ item.official_english_title or item.title }}</h2>
+      <p>{{ item.authors|join(', ') }}</p>
+      <p class="muted">{{ item.venue }}{% if item.year %} · {{ item.year }}{% endif %}</p>
+      {% if item.abstract %}<details><summary>{{ site.ui.abstract_label }}</summary><p>{{ item.abstract }}</p></details>{% endif %}
+      {% if item.keywords %}<div class="tags">{% for keyword in item.keywords %}<span class="tag">{{ keyword }}</span>{% endfor %}</div>{% endif %}
+      <div class="button-row publication-resources">
+        {% if item.doi %}<a href="https://doi.org/{{ item.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
+        {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">Link</a>{% endif %}
+        {% if item.pdf %}<a href="{{ item.pdf|site_href }}">{{ site.ui.pdf_label }}</a>{% endif %}
+        {% if item.data_url %}<a href="{{ item.data_url }}" target="_blank" rel="noopener noreferrer">{{ site.ui.data_label }}</a>{% endif %}
+        {% if item.code_url %}<a href="{{ item.code_url }}" target="_blank" rel="noopener noreferrer">{{ site.ui.code_label }}</a>{% endif %}
+        {% if item.replication_url %}<a href="{{ item.replication_url }}" target="_blank" rel="noopener noreferrer">{{ site.ui.replication_label }}</a>{% endif %}
+      </div>
+      <div class="button-row citation-tools">
+        <button class="button secondary" type="button" data-citation-copy data-citation="{{ item._citation.citation }}">{{ site.ui.citation_copy }}</button>
+        <button class="button secondary" type="button" data-bibtex data-filename="{{ item.id }}.bib" data-content="{{ item._citation.bibtex }}">{{ site.ui.citation_bibtex }}</button>
+        <button class="button secondary" type="button" data-ris data-filename="{{ item.id }}.ris" data-content="{{ item._citation.ris }}">{{ site.ui.citation_ris }}</button>
+        <span class="citation-status" aria-live="polite"></span>
+      </div>
+    </article>
+  {% endfor %}
+  </div>
+</section>

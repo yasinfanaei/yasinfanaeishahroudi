@@ -1,0 +1,1 @@
+<section class="block accordion" id="{{ block.id }}">{% for item in block.get('items', []) %}<details><summary>{{ item.title }}</summary><p>{{ item.body }}</p></details>{% endfor %}</section>
