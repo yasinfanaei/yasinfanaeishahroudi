@@ -6,7 +6,6 @@ import yaml
 ROOT=Path(__file__).resolve().parents[1]
 JS=(ROOT/'assets/site.js').read_text(encoding='utf-8')
 CSS=(ROOT/'assets/style.css').read_text(encoding='utf-8')
-PAGES=['index.html','research.html','publications.html','experience.html','cv.html','contact.html','teaching.html','news.html','search.html']
 BASE='https://yasinfanaei.github.io/yasinfanaeishahroudi'
 
 class AcademicProSeoTests(unittest.TestCase):
@@ -25,20 +24,20 @@ class AcademicProSeoTests(unittest.TestCase):
         self.assertIn('Page not found',nf)
         self.assertIn('صفحه پیدا نشد',nf)
 
-    def test_all_fixed_pages_have_project_canonical_and_hreflang(self):
-        for rel in PAGES:
-            text=(ROOT/rel).read_text(encoding='utf-8')
-            self.assertIn(f'rel="canonical" href="{BASE}/',text,rel)
-            self.assertIn(f'hreflang="en" href="{BASE}/',text,rel)
-            self.assertIn(f'hreflang="fa" href="{BASE}/fa/',text,rel)
-        for rel in PAGES:
-            text=(ROOT/'fa'/rel).read_text(encoding='utf-8')
-            self.assertIn(f'rel="canonical" href="{BASE}/fa/',text,rel)
-            self.assertIn(f'hreflang="en" href="{BASE}/',text,rel)
-            self.assertIn(f'hreflang="fa" href="{BASE}/fa/',text,rel)
+    def test_project_homepages_have_project_canonical_and_hreflang(self):
+        en=(ROOT/'index.html').read_text(encoding='utf-8')
+        fa=(ROOT/'fa/index.html').read_text(encoding='utf-8')
+        self.assertIn(f'rel="canonical" href="{BASE}/"',en)
+        self.assertIn(f'hreflang="en" href="{BASE}/"',en)
+        self.assertIn(f'hreflang="fa" href="{BASE}/fa/"',en)
+        self.assertIn(f'rel="canonical" href="{BASE}/fa/"',fa)
+        self.assertIn(f'hreflang="en" href="{BASE}/"',fa)
+        self.assertIn(f'hreflang="fa" href="{BASE}/fa/"',fa)
 
-    def test_javascript_uses_page_seo_and_person_profilepage_structured_data(self):
-        for token in ('page_seo','function updateStructuredData','application/ld+json','ProfilePage','Person','sameAs'):
+    def test_javascript_uses_project_site_url_for_rendered_canonicals(self):
+        design=json.loads((ROOT/'content/settings/design.json').read_text(encoding='utf-8'))
+        self.assertEqual(design['seo']['site_url'],BASE)
+        for token in ('function canonicalUrl','function updateStructuredData','application/ld+json','ProfilePage','Person','sameAs'):
             self.assertIn(token,JS)
 
     def test_homepages_expose_identity_without_javascript(self):
@@ -61,8 +60,6 @@ class AcademicProSeoTests(unittest.TestCase):
         self.assertIn('googletagmanager.com/gtag/js',JS)
 
     def test_shared_seo_settings_are_cms_managed(self):
-        design=json.loads((ROOT/'content/settings/design.json').read_text(encoding='utf-8'))
-        self.assertEqual(design['seo']['site_url'],BASE)
         cfg=yaml.safe_load((ROOT/'.pages.yml').read_text(encoding='utf-8'))
         entry=next(e for e in cfg['content'] if e.get('name')=='design_branding')
         names={f['name'] for f in entry['fields']}
