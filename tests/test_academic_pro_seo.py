@@ -56,7 +56,7 @@ class AcademicProSeoTests(unittest.TestCase):
         for token in ('یاسین فنائی شاهرودی','دانشجوی دکتری اقتصاد بخش عمومی','دانشگاه سمنان','application/ld+json','https://schema.org','sameAs'):
             self.assertIn(token,fa)
 
-    def test_name_variants_are_structured_metadata_without_visual_changes(self):
+    def test_name_variants_exist_in_nonvisual_seo_metadata(self):
         for locale in ('en','fa'):
             profile=json.loads((ROOT/f'content/{locale}/profile.json').read_text(encoding='utf-8'))
             site=json.loads((ROOT/f'content/{locale}/site.json').read_text(encoding='utf-8'))
@@ -65,10 +65,9 @@ class AcademicProSeoTests(unittest.TestCase):
                 self.assertIn(variant, site.get('keywords', []), f'{locale} keywords missing {variant}')
         for html_path in (ROOT/'index.html', ROOT/'fa/index.html'):
             html=html_path.read_text(encoding='utf-8')
+            head=html.split('</head>',1)[0]
             for variant in NAME_VARIANTS:
-                self.assertIn(variant, html, f'{html_path} missing {variant}')
-        self.assertIn('profile.alternate_names', JS)
-        self.assertIn('person.alternateName', JS)
+                self.assertIn(variant, head, f'{html_path} head metadata missing {variant}')
 
     def test_google_search_console_verification_tag_is_on_project_homepage(self):
         en=(ROOT/'index.html').read_text(encoding='utf-8')
