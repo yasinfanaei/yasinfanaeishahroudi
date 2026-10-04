@@ -7,6 +7,14 @@ ROOT=Path(__file__).resolve().parents[1]
 JS=(ROOT/'assets/site.js').read_text(encoding='utf-8')
 CSS=(ROOT/'assets/style.css').read_text(encoding='utf-8')
 BASE='https://yasinfanaei.github.io/yasinfanaeishahroudi'
+NAME_VARIANTS=[
+    'یاسین فنائی',
+    'یاسین فنایی',
+    'yasinfanaei',
+    'Yasin Fanaei Shahroudi',
+    'yasinfanaeishahroudi',
+    'yasin fanaei shahroudi',
+]
 
 class AcademicProSeoTests(unittest.TestCase):
     def test_static_seo_files_and_bilingual_404_exist(self):
@@ -47,6 +55,20 @@ class AcademicProSeoTests(unittest.TestCase):
             self.assertIn(token,en)
         for token in ('یاسین فنائی شاهرودی','دانشجوی دکتری اقتصاد بخش عمومی','دانشگاه سمنان','application/ld+json','https://schema.org','sameAs'):
             self.assertIn(token,fa)
+
+    def test_name_variants_are_structured_metadata_without_visual_changes(self):
+        for locale in ('en','fa'):
+            profile=json.loads((ROOT/f'content/{locale}/profile.json').read_text(encoding='utf-8'))
+            site=json.loads((ROOT/f'content/{locale}/site.json').read_text(encoding='utf-8'))
+            for variant in NAME_VARIANTS:
+                self.assertIn(variant, profile.get('alternate_names', []), f'{locale} profile missing {variant}')
+                self.assertIn(variant, site.get('keywords', []), f'{locale} keywords missing {variant}')
+        for html_path in (ROOT/'index.html', ROOT/'fa/index.html'):
+            html=html_path.read_text(encoding='utf-8')
+            for variant in NAME_VARIANTS:
+                self.assertIn(variant, html, f'{html_path} missing {variant}')
+        self.assertIn('profile.alternate_names', JS)
+        self.assertIn('person.alternateName', JS)
 
     def test_google_search_console_verification_tag_is_on_project_homepage(self):
         en=(ROOT/'index.html').read_text(encoding='utf-8')
